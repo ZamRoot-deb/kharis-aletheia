@@ -1,0 +1,262 @@
+/* ============================================================
+   KHARIS & ALETHEIA — PRINT LAB (lab.html)
+   Page-specific styles. Reuses design-system tokens from styles.css.
+   ============================================================ */
+
+.visually-hidden{
+  position:absolute !important;width:1px;height:1px;
+  padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);
+  white-space:nowrap;border:0;
+}
+
+.lab-section{padding:2.5rem 0 7rem}
+@media (max-width:767px){.lab-section{padding:1.5rem 0 5rem}}
+
+.lab-skip{
+  position:absolute;left:1rem;top:-3rem;z-index:200;
+  background:var(--gold);color:#120a02;
+  font-family:var(--font-mono);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  padding:.7em 1.2em;transition:top .15s;
+}
+.lab-skip:focus-visible{top:1rem}
+
+/* ---------- family tabs ---------- */
+#labFamilyTabs{margin-bottom:1.8rem}
+
+/* ---------- generic block ---------- */
+.lab-block{
+  border:1px solid var(--border);background:var(--surface);
+  padding:1.5rem 1.5rem 1.6rem;margin-bottom:1.2rem;min-width:0;
+}
+.lab-block-title{
+  font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:1rem;
+}
+.lab-block-hint{color:var(--muted);font-size:.72rem;margin-top:-.5rem;margin-bottom:1rem}
+
+/* ---------- top-level grid ---------- */
+.lab-gallery-wrap{margin-bottom:1.2rem}
+.lab-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:start;
+}
+@media (max-width:900px){.lab-grid{grid-template-columns:1fr}}
+.lab-controls{min-width:0}
+.lab-preview-col{min-width:0;position:sticky;top:88px;display:flex;flex-direction:column;gap:1.2rem}
+@media (max-width:900px){.lab-preview-col{position:static}}
+
+/* ---------- "start from" gallery ---------- */
+.lab-gallery{
+  display:flex;gap:.8rem;overflow-x:auto;padding-bottom:.6rem;
+  scroll-snap-type:x proximity;
+}
+.lab-gallery:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.lab-card{
+  flex:0 0 108px;scroll-snap-align:start;
+  border:1px solid var(--border);background:var(--bg);cursor:pointer;
+  padding:0;text-align:left;font-family:var(--font-mono);
+  transition:border-color .2s,box-shadow .2s;
+}
+.lab-card:hover,.lab-card:focus-visible{border-color:var(--border-strong);box-shadow:0 0 16px rgba(216,178,106,.18)}
+.lab-card.on{border-color:var(--gold);box-shadow:0 0 16px rgba(216,178,106,.35)}
+.lab-card .lc-thumb{width:100%;aspect-ratio:1;background:#000;overflow:hidden;display:block}
+.lab-card .lc-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.lab-card .lc-name{
+  display:block;font-size:.6rem;letter-spacing:.06em;color:var(--fg);
+  padding:.45rem .5rem;line-height:1.3;
+}
+.lab-gallery-empty,.lab-shelf-empty{
+  color:var(--muted);font-size:.82rem;padding:1.4rem 0;text-align:center;
+  border:1px dashed var(--border-strong);width:100%;
+}
+.lab-gallery-error{
+  color:var(--berry-hi);font-size:.78rem;padding:1rem;
+  border:1px solid rgba(232,50,94,.4);width:100%;
+}
+
+/* ---------- palette editor ---------- */
+.lab-palette-presets{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.2rem}
+.lab-preset{
+  display:flex;border:1px solid var(--border-strong);cursor:pointer;
+  padding:2px;background:var(--bg);transition:box-shadow .2s,border-color .2s;
+}
+.lab-preset:hover,.lab-preset:focus-visible{box-shadow:0 0 12px rgba(216,178,106,.3)}
+.lab-preset i{width:16px;height:20px;display:block}
+.lab-swatches{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1rem}
+.lab-swatch{display:flex;flex-direction:column;align-items:center;gap:.35rem}
+.lab-swatch input[type="color"]{
+  width:42px;height:42px;padding:0;border:1px solid var(--border-strong);
+  background:none;cursor:pointer;
+}
+.lab-swatch input[type="color"]::-webkit-color-swatch-wrapper{padding:2px}
+.lab-swatch input[type="color"]::-webkit-color-swatch{border:0}
+.lab-swatch-rm{
+  background:none;border:0;color:var(--muted);font-size:.6rem;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;padding:.15em .3em;
+}
+.lab-swatch-rm:hover{color:var(--berry-hi)}
+.lab-swatch-rm:disabled{opacity:.3;cursor:default}
+.lab-swatch-rm:disabled:hover{color:var(--muted)}
+.lab-swatch-actions{display:flex;gap:.7rem;flex-wrap:wrap}
+.lab-swatch-actions .btn{padding:.6em 1.1em;font-size:.68rem}
+.lab-swatch-actions .btn:disabled{opacity:.35;cursor:default;box-shadow:none}
+
+/* ---------- generic field / range rows ---------- */
+.lab-field{margin-bottom:1.1rem}
+.lab-field label,.lab-field-label{
+  display:block;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.5rem;
+}
+.lab-mini-btn{font-size:.66rem;padding:.55em 1.1em}
+.lab-range-row{display:flex;align-items:center;gap:.8rem}
+.lab-range-row input[type="range"]{flex:1;min-width:0;accent-color:var(--gold)}
+.lab-range-row output{
+  font-family:var(--font-mono);font-size:.72rem;color:var(--fg);
+  min-width:2.6em;text-align:right;flex-shrink:0;
+}
+input[type="range"]{height:20px;background:transparent;cursor:pointer}
+input[type="text"],input[type="number"]{
+  background:var(--surface);color:var(--fg);border:1px solid var(--border-strong);
+  font-family:var(--font-mono);font-size:.85rem;padding:.65em .85em;outline:none;width:100%;
+}
+input[type="text"]:focus-visible,input[type="number"]:focus-visible{
+  border-color:var(--gold);box-shadow:0 0 10px rgba(216,178,106,.25);
+}
+
+/* ---------- segmented / toggle buttons (motifs, frame, booleans) ---------- */
+.lab-seg{display:flex;flex-wrap:wrap;gap:.6rem}
+.lab-seg .pill{font-size:.64rem;padding:.55em 1.1em}
+.lab-toggle{
+  display:inline-flex;align-items:center;gap:.6em;cursor:pointer;
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fg);
+}
+.lab-toggle .lt-box{
+  width:34px;height:19px;border:1px solid var(--border-strong);position:relative;flex-shrink:0;
+  transition:border-color .2s,background .2s;
+}
+.lab-toggle .lt-box::after{
+  content:"";position:absolute;top:2px;left:2px;width:13px;height:13px;background:var(--muted);
+  transition:transform .18s,background .18s;
+}
+.lab-toggle input{position:absolute;opacity:0;width:1px;height:1px}
+.lab-toggle input:checked + .lt-box{border-color:var(--gold);background:rgba(216,178,106,.14)}
+.lab-toggle input:checked + .lt-box::after{transform:translateX(15px);background:var(--gold)}
+.lab-toggle input:focus-visible + .lt-box{outline:2px solid var(--gold);outline-offset:2px}
+.lab-bool-row{display:flex;flex-wrap:wrap;gap:1.4rem;margin-bottom:1.1rem}
+
+/* ---------- band-heights repeatable list (kente) ---------- */
+.lab-bandlist{display:flex;flex-direction:column;gap:.6rem;margin-bottom:.8rem}
+.lab-band-row{display:flex;align-items:center;gap:.7rem}
+.lab-band-row span.lb-idx{font-size:.62rem;color:var(--muted);width:2.4em;flex-shrink:0}
+.lab-band-row input[type="range"]{flex:1;min-width:0;accent-color:var(--gold)}
+.lab-band-row output{font-size:.7rem;min-width:2em;text-align:right;flex-shrink:0}
+.lab-band-row button{
+  background:none;border:1px solid var(--border-strong);color:var(--muted);
+  width:24px;height:24px;line-height:1;cursor:pointer;flex-shrink:0;
+}
+.lab-band-row button:hover{color:var(--berry-hi);border-color:var(--berry)}
+.lab-band-row button:disabled{opacity:.3;cursor:default}
+.lab-band-row button:disabled:hover{color:var(--muted);border-color:var(--border-strong)}
+
+/* ---------- adinkra symbol picker ---------- */
+.lab-symbols{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:.6rem}
+.lab-symbol{
+  border:1px solid var(--border);background:var(--bg);cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:.35rem;
+  padding:.7rem .4rem .55rem;transition:border-color .2s,box-shadow .2s;
+}
+.lab-symbol:hover,.lab-symbol:focus-visible{border-color:var(--border-strong)}
+.lab-symbol.on{border-color:var(--gold);box-shadow:0 0 14px rgba(216,178,106,.3);background:rgba(216,178,106,.06)}
+.lab-symbol svg{width:34px;height:34px;color:var(--gold);overflow:visible}
+.lab-symbol.on svg{color:var(--berry-hi)}
+.lab-symbol span{font-size:.56rem;letter-spacing:.04em;text-align:center;color:var(--muted);line-height:1.2}
+.lab-symbol.on span{color:var(--fg)}
+
+/* ---------- tools row (seed / randomize / undo / redo / reset) ---------- */
+.lab-tools .lab-field{margin-bottom:1rem}
+.lab-tool-btns{display:flex;flex-wrap:wrap;gap:.7rem}
+.lab-tool-btns .btn{font-size:.68rem;padding:.7em 1.1em}
+.lab-tool-btns .btn:disabled{opacity:.35;cursor:default;box-shadow:none}
+.lab-dice{display:inline-block;transition:transform .4s cubic-bezier(.2,.7,.3,1.4)}
+.lab-dice.spin{transform:rotate(340deg)}
+
+/* ---------- name + save row ---------- */
+.lab-save-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.3rem}
+.lab-save-row .btn{flex:1 1 180px;min-width:0;justify-content:center}
+
+/* ---------- preview ---------- */
+.lab-preview-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.lab-zoom{display:flex;align-items:center;gap:.7rem;flex:1;min-width:160px}
+.lab-zoom label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);flex-shrink:0}
+.lab-zoom input[type="range"]{flex:1;min-width:0;accent-color:var(--gold)}
+.lab-preview{
+  aspect-ratio:1;width:100%;border:1px solid var(--border-strong);background:#000;
+  background-repeat:repeat;box-shadow:0 0 30px rgba(216,178,106,.1);position:relative;
+}
+.lab-preview.is-empty::after{
+  content:"Preview unavailable — adjust a control to try again.";
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:2rem;color:var(--berry-hi);font-size:.78rem;background:var(--surface);
+}
+.lab-tee-mock{
+  border:1px solid var(--border);background:var(--surface);padding:1rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.lab-tee-mock svg{width:100%;max-width:220px;height:auto;display:block}
+
+/* ---------- meaning panel ---------- */
+.lab-meaning{border:1px solid var(--border);background:var(--surface);padding:1.4rem 1.5rem}
+.lab-meaning h3{
+  font-family:var(--font-display);font-weight:700;font-size:.82rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;
+}
+.lab-meaning p{color:var(--muted);font-size:.82rem;margin-bottom:.9rem}
+.lab-meaning p:last-child{margin-bottom:0}
+.lab-symbol-meaning{border-top:1px solid var(--border);padding-top:.9rem;margin-top:.2rem}
+.lab-symbol-meaning b{color:var(--fg)}
+
+/* ---------- my prints shelf ---------- */
+.lab-shelf-wrap{margin-top:3.5rem}
+.lab-shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.1rem}
+.lab-shelf-card{
+  border:1px solid var(--border);background:var(--surface);overflow:hidden;
+  display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s;min-width:0;
+}
+.lab-shelf-card:hover{border-color:var(--border-strong);box-shadow:0 0 20px rgba(216,178,106,.1)}
+.lab-shelf-thumb{aspect-ratio:1;background:#000;overflow:hidden}
+.lab-shelf-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.lab-shelf-body{padding:.9rem 1rem 1rem;display:flex;flex-direction:column;gap:.55rem;flex:1;min-width:0}
+.lab-shelf-name{font-size:.76rem;color:var(--fg);word-break:break-word}
+.lab-shelf-fam{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.lab-shelf-actions{display:flex;flex-wrap:wrap;gap:.4rem .6rem;margin-top:auto}
+.lab-shelf-actions button{
+  background:none;border:0;color:var(--muted);font-size:.6rem;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;padding:.2em 0;
+}
+.lab-shelf-actions button:hover{color:var(--gold)}
+.lab-shelf-actions button.lab-danger:hover{color:var(--berry-hi)}
+.lab-rename-row{display:flex;gap:.4rem}
+.lab-rename-row input{font-size:.74rem;padding:.4em .5em}
+.lab-rename-row button{
+  background:none;border:1px solid var(--border-strong);color:var(--gold);
+  font-size:.6rem;padding:0 .6em;cursor:pointer;
+}
+
+/* ---------- confirm-delete dialog content (rendered inside kaModal) ---------- */
+.lab-confirm p{color:var(--muted);font-size:.85rem;margin-bottom:1.4rem}
+.lab-confirm .lab-confirm-btns{display:flex;gap:.8rem;justify-content:flex-end;flex-wrap:wrap}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  .lab-dice.spin{transform:none}
+  .lab-card,.lab-preset,.lab-symbol,.lab-shelf-card,.lab-toggle .lt-box,.lab-toggle .lt-box::after{
+    transition:none;
+  }
+}
+
+/* ---------- narrow screens ---------- */
+@media (max-width:420px){
+  .lab-block{padding:1.2rem 1rem 1.3rem}
+  .lab-save-row .btn{flex:1 1 100%}
+  .lab-symbols{grid-template-columns:repeat(auto-fill,minmax(64px,1fr))}
+}

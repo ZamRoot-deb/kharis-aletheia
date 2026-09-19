@@ -1,0 +1,29 @@
+# KHARIS & ALETHEIA — deployment compose file (repo root).
+# See README-DEPLOY.md for the full setup walkthrough (Windows-friendly).
+#
+# `docker compose up -d --build` builds web/Dockerfile and runs it on :3000.
+#
+# Config: the five NEXT_PUBLIC_* values below are read by lib/config.ts
+# (web/lib/config.ts) and are BAKED IN AT BUILD TIME — Next.js inlines
+# NEXT_PUBLIC_* vars into the compiled app, so changing them requires a
+# rebuild (`docker compose up -d --build`), not just a container restart.
+# Put real values in a `.env` file next to this one (copy `.env.example`) —
+# Compose loads it automatically. Anything left unset falls back to the
+# same placeholder the site ships with (see web/lib/config.ts).
+
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_CONTACT_EMAIL: ${NEXT_PUBLIC_CONTACT_EMAIL:-}
+        NEXT_PUBLIC_FORM_ENDPOINT: ${NEXT_PUBLIC_FORM_ENDPOINT:-}
+        NEXT_PUBLIC_PAYMENT_PROVIDER: ${NEXT_PUBLIC_PAYMENT_PROVIDER:-}
+        NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY: ${NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY:-}
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-}
+    image: kharis-aletheia-web:latest
+    container_name: kharis-aletheia-web
+    ports:
+      - '3000:3000'
+    restart: unless-stopped

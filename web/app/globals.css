@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* ============================================================
+   KHARIS & ALETHEIA — ported design system.
+   Order matters: tailwindcss preflight/utilities first, then the ported
+   vanilla-site stylesheets (base = ../styles.css, then every per-page
+   stylesheet merged in as an @import'ed partial per CONTRACT-NEXT.md
+   "Design system"), then the Tailwind v4 @theme token map last so it
+   always wins ties on cascade order for anything it does touch.
+   ============================================================ */
+@import "./styles/base.css";      /* ../styles.css — tokens, nav, footer, hero, buttons, cards, shared primitives */
+@import "./styles/shop.css";      /* ../shop.css — catalog toolbar, wishlist hearts, quick-add modal */
+@import "./styles/product.css";   /* ../product.css — gallery, size/qty, accordions, related */
+@import "./styles/studio.css";    /* ../studio.css — Tee Studio stage + controls */
+@import "./styles/lab.css";       /* ../lab.css — Print Lab controls + preview + shelf */
+@import "./styles/home.css";      /* ../home.css — index/lookbook/makers */
+@import "./styles/forms.css";     /* ../forms.css — bulk/gift/contact calculators + FAQ + result panels */
+@import "./styles/checkout.css";  /* ../checkout.css — checkout + order confirmation + print styles */
+
+/* ---------- Tailwind v4 theme tokens (CONTRACT-NEXT.md "Design system") ----------
+   These expose the brand palette/fonts as Tailwind utilities (bg-surface, text-gold,
+   font-display, …) for layout/spacing/responsive/state work in JSX. The runtime
+   `--bg`/`--gold`/`--berry`/… CSS vars from styles.css (above) are kept as-is and are
+   what the ported component classes and the light-theme override actually read —
+   these @theme values are static (dark-mode literals) by Tailwind v4 design, so any
+   themed colour still routes through the ported CSS classes, not a bg- or text-
+   utility, to stay correct in both themes. */
+@theme {
+  --color-bg: #070308;
+  --color-surface: #0d060d;
+  --color-surface-2: #120812;
+  --color-gold: #d8b26a;
+  --color-gold-hi: #f0d6a0;
+  --color-berry: #e8325e;
+  --color-berry-hi: #ff6d92;
+  --color-crimson: #8b0e3a;
+  --color-maroon: #2a0816;
+  --color-fg: #f7f1e8;
+  --color-muted: #a08e93;
+  --font-display: 'Orbitron', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-pixel: 'Tiny5', monospace;
+}
+
+/* ---------- body base (styles.css already sets bg/color/font on body; this only
+   adds what the old site got for free from being a plain multi-page site: Tailwind's
+   preflight resets margin but browsers, and Next's root layout needs an explicit
+   background so there is never a flash of an unstyled/white frame while fonts/CSS
+   stream in). ---------- */
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* ---------- merge-integration fixup ----------
+   ../forms.css's bare `.price-row{…padding…border-bottom…}` was written assuming it
+   would only ever load on bulk.html (the old per-page <link> model). Now every page
+   CSS is merged into one stylesheet, so it would otherwise bleed into <CartDrawer>'s
+   `.price-row.cart-total` line (shared, rendered on every route). Pin the cart
+   drawer's total row back to its original flat look with a selector specific enough
+   to win regardless of @import order above. */
+.cart-foot .price-row { padding: 0; border-bottom: 0; font-size: .8rem; }
+
+/* ---------- Next.js App Router route-loading fallback (app/loading.tsx) ----------
+   Net-new: the old static multi-page site had no equivalent (every page was a full
+   navigation). Kept tiny and token-driven so it reads as part of the same system. */
+.page-loading {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.page-loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(216, 178, 106, .25);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: ka-page-spin .7s linear infinite;
+}
+@keyframes ka-page-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .page-loading-spinner { animation: none; }
+}

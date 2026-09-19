@@ -1,0 +1,28 @@
+# KHARIS & ALETHEIA — keep the build context (./web, per docker-compose.yml's
+# `build.context`) small and the image clean. The old vanilla static site one
+# level up is never sent to the Docker daemon in the first place — it sits
+# outside this context — so nothing here needs to reference it.
+node_modules
+.next
+out
+.git
+.gitignore
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+.DS_Store
+*.pem
+.env*
+!.env.example
+
+README.md
+README-DEPLOY.md
+CONTRACT-NEXT.md
+GATES.md
+*.tsbuildinfo
+tests
+.vscode
+.idea

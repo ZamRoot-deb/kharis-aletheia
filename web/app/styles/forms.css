@@ -1,0 +1,222 @@
+/* ============================================================
+   KHARIS & ALETHEIA — forms pages (bulk, gift, contact)
+   Extends styles.css tokens/components. No hardcoded colours.
+   ============================================================ */
+
+/* ---------- shared field bits ---------- */
+.pd-field.wide select,
+.pd-field.wide input,
+.pd-field.wide textarea{max-width:none}
+.pd-field textarea{
+  width:100%;background:var(--surface);color:var(--fg);
+  border:1px solid var(--border-strong);font-family:var(--font-mono);
+  font-size:.85rem;padding:.7em .9em;outline:none;resize:vertical;min-height:110px;
+}
+.pd-field textarea:focus{border-color:var(--gold);box-shadow:0 0 10px rgba(216,178,106,.25)}
+.pd-field select[required]:invalid{color:var(--muted)}
+
+.field-legend{
+  display:block;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.7rem;padding:0;font-family:var(--font-mono);
+}
+.field-hint{color:var(--muted);letter-spacing:.04em;text-transform:none;font-size:.7rem}
+fieldset{border:0;padding:0;margin:0 0 1.2rem;min-width:0}
+fieldset.pd-field{margin-bottom:1.2rem}
+
+.field-err{
+  display:block;color:var(--berry-hi);font-size:.7rem;margin-top:.5rem;
+  letter-spacing:.02em;min-height:1px;
+}
+html[data-theme="light"] .field-err{color:var(--berry)}
+.pd-field.has-err select,.pd-field.has-err input,.pd-field.has-err textarea,
+fieldset.has-err .choice-row{border-color:var(--berry)}
+.pd-field.has-err select,.pd-field.has-err input,.pd-field.has-err textarea{border-color:var(--berry)}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 1.6rem}
+.form-grid .pd-field{min-width:0}
+@media (max-width:640px){.form-grid{grid-template-columns:1fr}}
+
+.char-count{display:flex;justify-content:flex-end;gap:.4em;font-size:.62rem;color:var(--muted);margin-top:.4rem;letter-spacing:.06em}
+.char-count.near{color:var(--gold)}
+.char-count.over{color:var(--berry-hi)}
+
+/* honeypot — off-screen, not display:none, so real assistive tech and bots behave predictably */
+.hp-field{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+/* ---------- busy / status / results ---------- */
+.form-status{font-size:.76rem;color:var(--muted);margin-top:1rem;min-height:1.2em}
+.btn[aria-busy="true"]{opacity:.72;cursor:progress}
+.spin{
+  display:inline-block;width:11px;height:11px;margin-right:.6em;vertical-align:-1px;
+  border:2px solid rgba(0,0,0,.25);border-top-color:currentColor;border-radius:50%;
+  animation:ka-spin .7s linear infinite;
+}
+@keyframes ka-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation:none}}
+
+.result-panel{border:1px solid var(--border-strong);background:var(--surface);padding:1.8rem 2rem;margin-top:1.8rem}
+.result-panel.ok{border-color:rgba(216,178,106,.55)}
+.result-panel.err{border-color:rgba(232,50,94,.6)}
+.result-panel h3{font-family:var(--font-display);font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.9rem;color:var(--gold)}
+.result-panel.err h3{color:var(--berry-hi)}
+.result-panel p{color:var(--muted);font-size:.84rem;margin-top:.6rem}
+.result-panel dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.4rem;font-size:.82rem;margin:0}
+.result-panel dt{color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:.62rem;align-self:start;padding-top:.2em}
+.result-panel dd{color:var(--fg)}
+.result-panel .via-note{font-size:.78rem;color:var(--muted);margin-top:1.2rem;padding-top:1.2rem;border-top:1px dashed var(--border)}
+.result-panel .via-note a{color:var(--gold);text-decoration:underline}
+.result-panel .retry-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.2rem}
+
+.note-strip{border:1px dashed var(--border-strong);padding:1.1rem 1.4rem;font-size:.8rem;color:var(--muted);margin:1.8rem 0}
+.note-strip b{color:var(--gold)}
+.note-strip a{color:var(--gold);text-decoration:underline}
+
+/* ---------- who it's for ---------- */
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+@media (max-width:900px){.who-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.who-grid{grid-template-columns:1fr}}
+.who-card{border:1px solid var(--border);background:var(--surface);padding:1.8rem 1.6rem;min-width:0;transition:border-color .25s,box-shadow .25s}
+.who-card:hover{border-color:var(--border-strong);box-shadow:0 0 26px rgba(216,178,106,.1)}
+.who-card h3{font-family:var(--font-display);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem;color:var(--fg)}
+.who-card p{color:var(--muted);font-size:.8rem}
+
+/* ---------- calculator ---------- */
+.calc-shell{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:2.2rem;align-items:start}
+@media (max-width:900px){.calc-shell{grid-template-columns:minmax(0,1fr)}}
+.calc-card{border:1px solid var(--border-strong);background:var(--surface);padding:2rem;min-width:0}
+.calc-summary{position:sticky;top:96px}
+@media (max-width:900px){.calc-summary{position:static}}
+
+.qty-control{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--border-strong);flex-shrink:0}
+.stepper button{
+  width:38px;height:38px;background:none;border:0;color:var(--gold);
+  font-size:1.05rem;line-height:1;cursor:pointer;transition:background .15s;
+}
+.stepper button:hover{background:var(--table-row)}
+.stepper button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.stepper input{
+  width:64px;text-align:center;border:0;border-left:1px solid var(--border-strong);border-right:1px solid var(--border-strong);
+  background:none;color:var(--fg);font-family:var(--font-mono);font-size:.88rem;height:38px;
+  -moz-appearance:textfield;
+}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.qty-slider{flex:1;min-width:140px}
+
+input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:var(--border-strong);outline:none;border-radius:0}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 8px rgba(216,178,106,.5)}
+input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--gold);border:0;cursor:pointer;box-shadow:0 0 8px rgba(216,178,106,.5)}
+input[type="range"]:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+
+.choice-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
+@media (max-width:640px){.choice-row{grid-template-columns:1fr}}
+.choice-card{position:relative;min-width:0}
+.choice-card input{position:absolute;opacity:0;width:1px;height:1px}
+.choice-card label{
+  display:block;height:100%;border:1px solid var(--border-strong);padding:1rem 1.1rem;cursor:pointer;
+  transition:border-color .2s,background .2s,box-shadow .2s;
+}
+.choice-card input:checked + label{border-color:var(--gold);background:var(--table-row);box-shadow:0 0 14px rgba(216,178,106,.2)}
+.choice-card input:focus-visible + label{outline:2px solid var(--gold);outline-offset:2px}
+.choice-card .cc-name{display:block;font-size:.78rem;letter-spacing:.06em;color:var(--fg);font-weight:700}
+.choice-card .cc-note{display:block;font-size:.7rem;color:var(--muted);margin-top:.4rem;line-height:1.5}
+
+.tier-table{margin-bottom:0;display:block}
+.tier-table table{min-width:0}
+.tier-table th,.tier-table td{padding:.75rem .8rem}
+.tier-table tbody tr.on{background:rgba(216,178,106,.2)}
+.tier-table tbody tr.on th,.tier-table tbody tr.on td{color:var(--fg);font-weight:700}
+html[data-theme="light"] .tier-table tbody tr.on{background:rgba(165,128,60,.22)}
+
+.estimate-tag{
+  display:inline-block;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--border);padding:.35em .9em;margin-bottom:1.4rem;
+}
+.price-summary{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--border)}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-size:.82rem;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.price-row:last-child{border-bottom:0}
+.price-row span{color:var(--muted)}
+.price-row b{color:var(--gold);font-family:var(--font-mono)}
+.price-row.total{padding-top:.8rem}
+.price-row.total b{color:var(--berry-hi);font-size:1.05rem;font-family:var(--font-display)}
+html[data-theme="light"] .price-row.total b{color:var(--berry)}
+.leadtime-note{font-size:.74rem;color:var(--muted);margin-top:1.2rem;padding-top:1.2rem;border-top:1px dashed var(--border)}
+
+.size-breakdown{display:grid;grid-template-columns:repeat(7,1fr);gap:.6rem}
+@media (max-width:640px){.size-breakdown{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:360px){.size-breakdown{grid-template-columns:repeat(3,1fr)}}
+.sb-field{display:flex;flex-direction:column;gap:.4rem;min-width:0}
+.sb-field label{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-align:center}
+.sb-field input{
+  width:100%;background:var(--surface-2);border:1px solid var(--border-strong);color:var(--fg);
+  font-family:var(--font-mono);font-size:.82rem;padding:.5em .2em;text-align:center;
+}
+.sb-field input:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.sb-total{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;margin-top:1.1rem;font-size:.78rem;color:var(--muted)}
+.sb-total .sb-count,.sb-total #bkSbTarget{font-family:var(--font-display);color:var(--gold)}
+.sb-total.err .sb-count{color:var(--berry-hi)}
+.sb-total button.link-arrow{font-size:.66rem;background:none;border:0;cursor:pointer}
+
+/* ---------- gift cards ---------- */
+.amount-row{display:flex;flex-wrap:wrap;gap:.7rem}
+.amount-btn{
+  font-family:var(--font-mono);font-size:.82rem;font-weight:700;letter-spacing:.04em;
+  color:var(--gold);border:1px solid var(--border-strong);background:none;
+  padding:.75em 1.4em;cursor:pointer;transition:all .2s;
+}
+.amount-btn:hover{background:var(--table-row)}
+.amount-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.amount-btn.on{background:var(--gold);color:#120a02;border-color:var(--gold);box-shadow:0 0 14px rgba(216,178,106,.35)}
+html[data-theme="light"] .amount-btn.on{color:#fffaf1}
+.amount-custom{display:flex;align-items:center;gap:.7rem;margin-top:1rem;flex-wrap:wrap}
+.amount-custom label{color:var(--muted);font-size:.78rem}
+.amount-custom input{width:130px}
+
+.gift-preview-wrap{position:sticky;top:96px}
+@media (max-width:900px){.gift-preview-wrap{position:static}}
+.gift-card-svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 36px rgba(0,0,0,.35))}
+.gift-preview-note{font-size:.7rem;color:var(--muted);margin-top:1.1rem;text-align:center;letter-spacing:.06em}
+
+.terms-block{color:var(--muted);font-size:.84rem}
+.terms-block p{margin-bottom:1rem}
+
+/* ---------- FAQ accordion (native <details>) ----------
+   Renamed .faq-list/.faq-item/.faq-a -> .form-faq-list/.form-faq-item/.form-faq-a
+   (from ../forms.css's original bare names) because ../studio.css defines its OWN,
+   visually different .faq-item/.faq-list pattern (bordered cards + rotating "+").
+   Both stylesheets used those bare names safely in the old per-page-<link> site;
+   merged into one global stylesheet per CONTRACT-NEXT.md they'd collide (studio's
+   rotate-on-open transform would still apply under forms' "+"/"–" glyph swap). The
+   forms builder (bulk/gift/contact) should use these .form-faq-* classes. */
+.form-faq-list{border-top:1px solid var(--border)}
+.form-faq-item{border-bottom:1px solid var(--border)}
+.form-faq-item summary{
+  display:flex;justify-content:space-between;align-items:center;gap:1.2rem;
+  padding:1.3rem .2rem;cursor:pointer;list-style:none;
+  font-family:var(--font-mono);font-size:.84rem;letter-spacing:.02em;color:var(--fg);
+}
+.form-faq-item summary::-webkit-details-marker{display:none}
+.form-faq-item summary::after{
+  content:"+";flex-shrink:0;font-family:var(--font-display);font-size:1.2rem;line-height:1;color:var(--gold);
+}
+.form-faq-item[open] summary::after{content:"–"}
+.form-faq-item summary:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.form-faq-item summary:hover{color:var(--gold)}
+.form-faq-a{color:var(--muted);font-size:.84rem;padding:0 .2rem 1.6rem;max-width:66ch}
+.form-faq-a a{color:var(--gold);text-decoration:underline}
+
+/* ---------- contact ---------- */
+.contact-shell{display:grid;grid-template-columns:1.2fr .8fr;gap:2.4rem;align-items:start}
+@media (max-width:900px){.contact-shell{grid-template-columns:1fr}}
+.contact-side{position:sticky;top:96px}
+@media (max-width:900px){.contact-side{position:static}}
+.contact-side .side-card{border:1px solid var(--border);background:var(--surface);padding:1.8rem;margin-bottom:1.4rem}
+.contact-side h3{font-family:var(--font-display);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:.7rem}
+.contact-side p{color:var(--muted);font-size:.82rem;margin-bottom:.9rem}
+.contact-side .direct-email{font-size:.86rem;word-break:break-all}
+
+/* ---------- 360px safety ---------- */
+@media (max-width:400px){
+  .calc-card{padding:1.4rem 1.2rem}
+  .choice-row{gap:.7rem}
+}

@@ -2,3 +2,10 @@
 node_modules/
 .unlazy-skip
 .shots/
+web/node_modules/
+web/.next/
+web/out/
+
+# deploy config (docker-compose.yml) — real values live in .env, never committed
+.env
+!.env.example
