@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHECKOUT — KHARIS &amp; ALETHEIA</title>
+<meta name="description" content="Checkout — review your made-to-order pieces, add delivery details and place your order.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.kharisandaletheia.com/checkout.html">
+<meta property="og:site_name" content="KHARIS &amp; ALETHEIA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CHECKOUT — KHARIS &amp; ALETHEIA">
+<meta property="og:description" content="Checkout — review your made-to-order pieces, add delivery details and place your order.">
+<meta property="og:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta property="og:url" content="https://www.kharisandaletheia.com/checkout.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CHECKOUT — KHARIS &amp; ALETHEIA">
+<meta name="twitter:description" content="Checkout — review your made-to-order pieces, add delivery details and place your order.">
+<meta name="twitter:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta name="theme-color" content="#070308" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6efe2" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="site.webmanifest">
+<!-- Checkout is the one page that can load a third-party script (Paystack Inline
+     JS, when the owner switches payment.provider to 'paystack'); this pins
+     script-src to that one known host + the page's own known inline snippet
+     (by hash, since a static site has no per-request nonce to issue) so a
+     compromised/rewritten third-party response can't run arbitrary script here. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-+i6XpyNpu+XQovUjYyaiqo8r4WKB+csly5JfkGt1iDk=' https://js.paystack.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-src https://checkout.paystack.com https://js.paystack.co; object-src 'none'; base-uri 'self'; form-action 'self'">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ka_theme') || 'dark');</script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="checkout.css">
+</head>
+<body data-page="checkout">
+
+<noscript>
+  <div class="wrap" style="padding:2rem 0 0">
+    <p class="micro">JavaScript required</p>
+    <p class="lede">Checkout needs JavaScript enabled to review your cart and place an order. Please enable it, or <a href="contact.html">contact us</a> to order another way.</p>
+  </div>
+</noscript>
+
+<div class="page">
+  <section class="page-hero plain" style="min-height:24vh">
+    <div class="wrap">
+      <p class="micro">Almost there</p>
+      <h1 class="h-display glitch glitch-anim" data-text="CHECKOUT">CHECKOUT</h1>
+      <p class="lede">Made to order, cut for you alone. Review your pieces and tell us where they're going.</p>
+    </div>
+  </section>
+
+  <section class="co-section-wrap">
+    <div class="wrap">
+      <div id="checkoutRoot"><!-- rendered by checkout.js --></div>
+      <div class="sr-only" id="coStatusLive" role="status" aria-live="polite"></div>
+    </div>
+  </section>
+</div>
+
+<footer data-ka-footer></footer>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
+<script src="core.js"></script>
+<script src="app.js"></script>
+<script src="checkout.js"></script>
+</body>
+</html>

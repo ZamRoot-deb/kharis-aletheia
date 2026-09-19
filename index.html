@@ -5,15 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KHARIS &amp; ALETHEIA — African Print Tees, Made to Order</title>
 <meta name="description" content="Kharis & Aletheia — African-print tees and accessories, cut to order. Pick a print, place it your way, and we sew it, just for you.">
+<link rel="canonical" href="https://www.kharisandaletheia.com/index.html">
+<meta property="og:site_name" content="KHARIS &amp; ALETHEIA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KHARIS &amp; ALETHEIA — African Print Tees, Made to Order">
+<meta property="og:description" content="Kharis & Aletheia — African-print tees and accessories, cut to order. Pick a print, place it your way, and we sew it, just for you.">
+<meta property="og:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta property="og:url" content="https://www.kharisandaletheia.com/index.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KHARIS &amp; ALETHEIA — African Print Tees, Made to Order">
+<meta name="twitter:description" content="Kharis & Aletheia — African-print tees and accessories, cut to order. Pick a print, place it your way, and we sew it, just for you.">
+<meta name="twitter:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta name="theme-color" content="#070308" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6efe2" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" as="image" href="assets/img/hero-bg.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ka_theme') || 'dark');</script>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="home.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "KHARIS & ALETHEIA",
+  "url": "https://www.kharisandaletheia.com",
+  "logo": "https://www.kharisandaletheia.com/assets/icon-512.png",
+  "email": "hello@kharisandaletheia.com"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "KHARIS & ALETHEIA",
+  "url": "https://www.kharisandaletheia.com"
+}
+</script>
 </head>
 <body data-page="home">
 
+<main>
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <div class="hero-bg"></div>
@@ -23,7 +59,7 @@
   <div class="scanlines"></div>
 
   <div class="hero-inner">
-    <img class="hero-mark" src="assets/icon.png" alt="Kharis &amp; Aletheia mark">
+    <img decoding="async" class="hero-mark" src="assets/icon.png" width="512" height="512" alt="Kharis &amp; Aletheia mark">
     <p class="micro">African print tees · Made to order</p>
     <h1 class="h-display hero-title">
       <span class="glitch glitch-anim" data-text="GRACE">GRACE</span><br>
@@ -33,7 +69,7 @@
     Pick a print, place it your way, and we sew it. Just for you.</p>
     <div class="hero-cta">
       <a class="btn btn-berry" href="shop.html">Shop the drop →</a>
-      <a class="btn btn-gold" href="#studios">Explore the prints</a>
+      <a class="btn btn-gold" href="lab.html">Explore the prints</a>
     </div>
   </div>
   <a class="scroll-hint" href="#drop" aria-label="Scroll down">▼</a>
@@ -48,7 +84,7 @@
     </div>
     <div class="drop-grid">
       <a class="drop-card reveal d1" href="shop.html#tees">
-        <img class="card-img" src="assets/mockup-tee-crimson.jpg" alt="Signature kente stripe tee, front and back">
+        <img decoding="async" loading="lazy" class="card-img" src="assets/mockup-tee-crimson.webp" width="1600" height="1117" alt="Signature kente stripe tee, front and back">
         <div class="card-shade"></div>
         <div class="card-body">
           <p class="card-label">Signature cut</p>
@@ -58,7 +94,7 @@
         </div>
       </a>
       <a class="drop-card reveal d2" href="shop.html#sweatshirts">
-        <img class="card-img" src="assets/img/banner-sweatshirts.jpg" alt="The sweatshirt line">
+        <img decoding="async" loading="lazy" class="card-img" src="assets/img/banner-sweatshirts.webp" width="1600" height="900" alt="The sweatshirt line">
         <div class="card-shade"></div>
         <div class="card-body">
           <p class="card-label">New — heavy fleece</p>
@@ -67,8 +103,8 @@
           <span class="btn btn-gold">Shop sweatshirts →</span>
         </div>
       </a>
-      <a class="drop-card reveal d3" href="shop.html">
-        <img class="card-img" src="assets/img/drop-ankara.jpg" alt="Ankara After Dark capsule print">
+      <a class="drop-card reveal d3" href="shop.html?collection=ankara-after-dark">
+        <img decoding="async" loading="lazy" class="card-img" src="assets/img/drop-ankara.webp" width="1200" height="1200" alt="Ankara After Dark capsule print">
         <div class="card-shade"></div>
         <div class="card-body">
           <p class="card-label">Limited run</p>
@@ -91,20 +127,21 @@
     <div class="carousel reveal">
       <div class="car-view">
         <div class="car-track" id="carTrack">
-          <div class="car-slide"><figure><img src="assets/img/look-1.jpg" alt="Look 01 — signature kente stripe tee"><figcaption>Look 01 — Kente stripe</figcaption></figure></div>
-          <div class="car-slide"><figure><img src="assets/img/look-2.jpg" alt="Look 02 — midnight ankara panel tee"><figcaption>Look 02 — Midnight ankara</figcaption></figure></div>
-          <div class="car-slide"><figure><img src="assets/img/look-5.jpg" alt="Look 03 — berry adinkra crewneck"><figcaption>Look 03 — Berry crewneck</figcaption></figure></div>
-          <div class="car-slide"><figure><img src="assets/img/look-6.jpg" alt="Look 04 — midnight ankara hoodie"><figcaption>Look 04 — Ankara hoodie</figcaption></figure></div>
-          <div class="car-slide"><figure><img src="assets/img/look-3.jpg" alt="Look 05 — berry crest tee"><figcaption>Look 05 — Berry crest</figcaption></figure></div>
-          <div class="car-slide"><figure><img src="assets/img/look-7.jpg" alt="Look 06 — cream kente sleeve crew"><figcaption>Look 06 — Cream sleeve crew</figcaption></figure></div>
-          <div class="car-slide"><figure><img src="assets/img/look-8.jpg" alt="Look 07 — olive kente pocket tee"><figcaption>Look 07 — Olive pocket tee</figcaption></figure></div>
-          <div class="car-slide"><figure><img src="assets/img/look-4.jpg" alt="Look 08 — adinkra all-over tee"><figcaption>Look 08 — Adinkra all-over</figcaption></figure></div>
+          <div class="car-slide"><a href="lookbook.html#look-1" aria-label="View Look 01 — Kente stripe, in the lookbook"><figure><img decoding="async" loading="lazy" src="assets/img/look-1.webp" width="1024" height="1536" alt="Look 01 — signature kente stripe tee"><figcaption>Look 01 — Kente stripe</figcaption></figure></a></div>
+          <div class="car-slide"><a href="lookbook.html#look-2" aria-label="View Look 02 — Midnight ankara, in the lookbook"><figure><img decoding="async" loading="lazy" src="assets/img/look-2.webp" width="1024" height="1536" alt="Look 02 — midnight ankara panel tee"><figcaption>Look 02 — Midnight ankara</figcaption></figure></a></div>
+          <div class="car-slide"><a href="lookbook.html#look-3" aria-label="View Look 03 — Berry crewneck, in the lookbook"><figure><img decoding="async" loading="lazy" src="assets/img/look-5.webp" width="1024" height="1536" alt="Look 03 — berry adinkra crewneck"><figcaption>Look 03 — Berry crewneck</figcaption></figure></a></div>
+          <div class="car-slide"><a href="lookbook.html#look-4" aria-label="View Look 04 — Ankara hoodie, in the lookbook"><figure><img decoding="async" loading="lazy" src="assets/img/look-6.webp" width="1024" height="1536" alt="Look 04 — midnight ankara hoodie"><figcaption>Look 04 — Ankara hoodie</figcaption></figure></a></div>
+          <div class="car-slide"><a href="lookbook.html#look-5" aria-label="View Look 05 — Berry crest, in the lookbook"><figure><img decoding="async" loading="lazy" src="assets/img/look-3.webp" width="1024" height="1536" alt="Look 05 — berry crest tee"><figcaption>Look 05 — Berry crest</figcaption></figure></a></div>
+          <div class="car-slide"><a href="lookbook.html#look-6" aria-label="View Look 06 — Cream sleeve crew, in the lookbook"><figure><img decoding="async" loading="lazy" src="assets/img/look-7.webp" width="1024" height="1536" alt="Look 06 — cream kente sleeve crew"><figcaption>Look 06 — Cream sleeve crew</figcaption></figure></a></div>
+          <div class="car-slide"><a href="lookbook.html#look-7" aria-label="View Look 07 — Olive pocket tee, in the lookbook"><figure><img decoding="async" loading="lazy" src="assets/img/look-8.webp" width="1024" height="1536" alt="Look 07 — olive kente pocket tee"><figcaption>Look 07 — Olive pocket tee</figcaption></figure></a></div>
+          <div class="car-slide"><a href="lookbook.html#look-8" aria-label="View Look 08 — Adinkra all-over, in the lookbook"><figure><img decoding="async" loading="lazy" src="assets/img/look-4.webp" width="1024" height="1536" alt="Look 08 — adinkra all-over tee"><figcaption>Look 08 — Adinkra all-over</figcaption></figure></a></div>
         </div>
       </div>
       <button class="car-nav prev" id="carPrev" aria-label="Previous looks">‹</button>
       <button class="car-nav next" id="carNext" aria-label="Next looks">›</button>
       <div class="car-dots" id="carDots"></div>
     </div>
+    <p class="lookbook-cta reveal"><a class="link-arrow" href="lookbook.html">View the lookbook →</a></p>
   </div>
 </section>
 
@@ -115,28 +152,8 @@
       <p class="micro">Collaborations</p>
       <h2 class="h-display h-xl glitch" data-text="THE MAKERS BEHIND THE PRINTS">THE MAKERS BEHIND THE PRINTS</h2>
     </div>
-    <div class="maker-grid">
-      <article class="maker-card reveal d1">
-        <span class="badge live">Now live</span>
-        <h3>Efua Mensah</h3>
-        <p class="sub">Kente Codes</p>
-        <p>A Kumasi weaver re-mapping traditional kente stripes onto heavyweight cotton tees — every band cut with intent.</p>
-        <a class="link-arrow" href="shop.html">Shop the series →</a>
-      </article>
-      <article class="maker-card reveal d2">
-        <span class="badge live">Now live</span>
-        <h3>Kwame Asante</h3>
-        <p class="sub">Adinkra Signals</p>
-        <p>Adinkra symbology distilled into bold block prints — every symbol chosen for what it carries.</p>
-        <a class="link-arrow" href="shop.html">Shop the series →</a>
-      </article>
-      <article class="maker-card reveal d3">
-        <span class="badge">Upcoming</span>
-        <h3>Zuri Olayinka</h3>
-        <p class="sub">Indigo Nights</p>
-        <p>Lagos-born indigo dye work meets ankara geometry. The capsule drops this harmattan.</p>
-        <a class="link-arrow" href="#studios">Get notified →</a>
-      </article>
+    <div class="maker-grid" id="homeMakersGrid">
+      <div class="empty-state"><p class="es-copy">Loading the makers…</p></div>
     </div>
   </div>
 </section>
@@ -153,11 +170,13 @@
         <div class="step-num">01</div>
         <h3>Pick your print</h3>
         <p>Start from our kente, ankara and adinkra library — or bring a pattern of your own.</p>
+        <a class="link-arrow" href="lab.html">Browse the Print Lab →</a>
       </div>
       <div class="step-card reveal d2">
         <div class="step-num">02</div>
         <h3>Make it yours</h3>
         <p>Place the print, scale it, rotate it. Every placement cuts a different piece.</p>
+        <a class="link-arrow" href="studio.html">Open the Tee Studio →</a>
       </div>
       <div class="step-card reveal d3">
         <div class="step-num">03</div>
@@ -176,49 +195,49 @@
       <h2 class="h-display h-xl glitch" data-text="CHOOSE A STUDIO">CHOOSE A STUDIO</h2>
     </div>
     <div class="studio-grid">
-      <a class="studio-card reveal d1" href="shop.html">
+      <a class="studio-card reveal d1" href="studio.html">
         <span class="tag">Custom</span>
         <h3>Tee Studio</h3>
         <p>Pick a print, place it your way, choose your cut. The full custom flow.</p>
         <span class="link-arrow">Enter →</span>
       </a>
-      <a class="studio-card reveal d2" href="shop.html">
+      <a class="studio-card reveal d2" href="lab.html">
         <span class="tag">Design</span>
         <h3>Print Lab</h3>
         <p>Remix kente and ankara blocks live. Watch the layout update as you play.</p>
         <span class="link-arrow">Enter →</span>
       </a>
-      <a class="studio-card reveal d3" href="shop.html">
+      <a class="studio-card reveal d3" href="shop.html?collection=kente-codes">
         <span class="tag">Collection</span>
         <h3>Kente Codes</h3>
         <p>Our signature stripe series, cut to order in four colorways.</p>
         <span class="link-arrow">Enter →</span>
       </a>
-      <a class="studio-card reveal d1" href="shop.html">
+      <a class="studio-card reveal d1" href="shop.html?collection=adinkra-series">
         <span class="tag">Collection</span>
         <h3>Adinkra Series</h3>
         <p>Symbols of the Akan, block-printed on heavyweight cotton.</p>
         <span class="link-arrow">Enter →</span>
       </a>
-      <a class="studio-card reveal d2" href="shop.html">
+      <a class="studio-card reveal d2" href="shop.html?collection=ankara-after-dark">
         <span class="tag">Capsule</span>
         <h3>Ankara After Dark</h3>
         <p>The night-time capsule. Numbered, small batch, gone when it's gone.</p>
         <span class="link-arrow">Enter →</span>
       </a>
-      <a class="studio-card reveal d3" href="shop.html">
+      <a class="studio-card reveal d3" href="shop.html?collection=wraps-caps">
         <span class="tag">Accessories</span>
         <h3>Wraps &amp; Caps</h3>
         <p>Headwraps, caps and totes in matching prints to finish the fit.</p>
         <span class="link-arrow">Enter →</span>
       </a>
-      <a class="studio-card reveal d1" href="shop.html">
+      <a class="studio-card reveal d1" href="bulk.html">
         <span class="tag">Teams</span>
         <h3>Crew &amp; Bulk</h3>
         <p>Matching prints for crews, events and brands. Bulk, made to order.</p>
         <span class="link-arrow">Enter →</span>
       </a>
-      <a class="studio-card reveal d2" href="shop.html">
+      <a class="studio-card reveal d2" href="gift.html">
         <span class="tag">Gift</span>
         <h3>Gift Cards</h3>
         <p>Give grace &amp; truth. Digital gift cards from £25.</p>
@@ -243,29 +262,10 @@
           <h3>The Kente Stripe</h3>
           <p>The cut that started it all — banded, printed and sewn to order.</p>
         </div>
-        <a class="btn btn-gold" href="shop.html">View all →</a>
+        <a class="btn btn-gold" href="shop.html#tees">View all →</a>
       </div>
-      <div class="prod-grid">
-        <div class="prod-card">
-          <a class="prod-img" href="product.html?id=t01"><img src="assets/product-tee-white.jpg" alt="White tee with diagonal ankara panel"></a>
-          <button class="btn btn-solid" data-add data-id="t01">Add to cart</button>
-          <div class="prod-meta"><a href="product.html?id=t01"><p class="prod-name">ANKARA DIAGONAL #001</p></a><p class="prod-price">£38</p></div>
-        </div>
-        <div class="prod-card">
-          <a class="prod-img" href="product.html?id=t02"><img src="assets/product-tee-blue.jpg" alt="Ananse blue panel tee"></a>
-          <button class="btn btn-solid" data-add data-id="t02">Add to cart</button>
-          <div class="prod-meta"><a href="product.html?id=t02"><p class="prod-name">ANANSE BLUE PANEL #002</p></a><p class="prod-price">£36</p></div>
-        </div>
-        <div class="prod-card">
-          <a class="prod-img" href="product.html?id=t03"><img src="assets/product-tee-black.jpg" alt="Black tee with kente side stripe"></a>
-          <button class="btn btn-solid" data-add data-id="t03">Add to cart</button>
-          <div class="prod-meta"><a href="product.html?id=t03"><p class="prod-name">MIDNIGHT KENTE #003</p></a><p class="prod-price">£36</p></div>
-        </div>
-        <div class="prod-card">
-          <a class="prod-img" href="product.html?id=t04"><img src="assets/img/product-burgundy.jpg" alt="Berry crest tee"></a>
-          <button class="btn btn-solid" data-add data-id="t04">Add to cart</button>
-          <div class="prod-meta"><a href="product.html?id=t04"><p class="prod-name">BERRY CREST TEE #004</p></a><p class="prod-price">£38</p></div>
-        </div>
+      <div class="prod-grid" id="homeSignatureGrid">
+        <div class="empty-state"><p class="es-copy">Loading the signature line…</p></div>
       </div>
     </div>
 
@@ -276,29 +276,10 @@
           <h3>Custom Prints</h3>
           <p>Pieces placed and cut by people like you. When it's gone, it's gone.</p>
         </div>
-        <a class="btn btn-gold" href="shop.html">View all →</a>
+        <a class="btn btn-gold" href="shop.html?collection=custom-prints">View all →</a>
       </div>
-      <div class="prod-grid">
-        <div class="prod-card sold">
-          <div class="prod-img"><span class="sold-tag">Sold</span><img src="assets/img/product-navy.jpg" alt="Kente shoulder tee"></div>
-          <button class="btn btn-solid">Sold out</button>
-          <div class="prod-meta"><p class="prod-name">KENTE SHOULDER #011</p><p class="prod-price">£40</p></div>
-        </div>
-        <div class="prod-card sold">
-          <div class="prod-img"><span class="sold-tag">Sold</span><img src="assets/img/product-cream.jpg" alt="Adinkra all-over tee"></div>
-          <button class="btn btn-solid">Sold out</button>
-          <div class="prod-meta"><p class="prod-name">ADINKRA ALL-OVER #012</p><p class="prod-price">£42</p></div>
-        </div>
-        <div class="prod-card sold">
-          <div class="prod-img"><span class="sold-tag">Sold</span><img src="assets/img/product-gold.jpg" alt="Gold band tee"></div>
-          <button class="btn btn-solid">Sold out</button>
-          <div class="prod-meta"><p class="prod-name">GOLD BAND TEE #013</p><p class="prod-price">£40</p></div>
-        </div>
-        <div class="prod-card sold">
-          <div class="prod-img"><span class="sold-tag">Sold</span><img src="assets/img/product-mauve.jpg" alt="Mauve diagonal tee"></div>
-          <button class="btn btn-solid">Sold out</button>
-          <div class="prod-meta"><p class="prod-name">MAUVE DIAGONAL #014</p><p class="prod-price">£38</p></div>
-        </div>
+      <div class="prod-grid" id="homeCustomGrid">
+        <div class="empty-state"><p class="es-copy">Loading the archive…</p></div>
       </div>
     </div>
   </div>
@@ -311,10 +292,10 @@
       <p class="micro">In the wild</p>
       <h2 class="h-display h-xl glitch" data-text="ON THE STREETS">ON THE STREETS</h2>
     </div>
-    <div class="wild-grid" style="grid-template-columns:repeat(3,1fr)">
-      <div class="wild-card reveal d1"><img src="assets/img/street-1.jpg" alt="Kente stripe tee, city dusk"><span>Accra — dusk</span></div>
-      <div class="wild-card reveal d2"><img src="assets/img/street-2.jpg" alt="Ankara chest panel, close detail"><span>Ankara panel — detail</span></div>
-      <div class="wild-card reveal d3"><img src="assets/img/street-3.jpg" alt="Friends in matching prints at night"><span>Night shift — two of a kind</span></div>
+    <div class="wild-grid">
+      <div class="wild-card reveal d1"><img decoding="async" loading="lazy" src="assets/img/street-1.webp" width="1536" height="1024" alt="Kente stripe tee, city dusk"><span>Accra — dusk</span></div>
+      <div class="wild-card reveal d2"><img decoding="async" loading="lazy" src="assets/img/street-2.webp" width="1536" height="1024" alt="Ankara chest panel, close detail"><span>Ankara panel — detail</span></div>
+      <div class="wild-card reveal d3"><img decoding="async" loading="lazy" src="assets/img/street-3.webp" width="1536" height="1024" alt="Friends in matching prints at night"><span>Night shift — two of a kind</span></div>
     </div>
   </div>
 </section>
@@ -341,30 +322,37 @@
   <a class="btn btn-berry" href="shop.html">Shop the drop →</a>
 </section>
 
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="wrap foot-inner">
-    <a href="index.html">
-      <img class="logo-dark" src="assets/logo-horizontal-sm.png" alt="Kharis &amp; Aletheia">
-      <img class="logo-light" src="assets/logo-horizontal-navy.png" alt="Kharis &amp; Aletheia">
-    </a>
-    <p class="foot-line">Grace &amp; truth, woven in</p>
-    <nav class="foot-cols">
-      <a href="shop.html#tees">Tees</a>
-      <a href="shop.html#sweatshirts">Sweatshirts</a>
-      <a href="shop.html#accessories">Accessories</a>
-      <a href="index.html#lookbook">Lookbook</a>
-      <a href="sizing.html">Sizing</a>
-      <a href="about.html">About</a>
-      <a href="policies.html">Refund Policy &amp; Terms</a>
-    </nav>
-    <p class="foot-copy">© 2026 KHARIS &amp; ALETHEIA — ALL RIGHTS RESERVED</p>
+<!-- ============ NEWSLETTER ============ -->
+<section id="newsletter">
+  <div class="wrap">
+    <div class="newsletter reveal">
+      <div class="nl-copy">
+        <p class="micro">Stay in the loop</p>
+        <h2 class="h-display h-md">FIRST LOOK AT NEW DROPS</h2>
+        <p>New prints, new capsules, no spam — straight to your inbox.</p>
+      </div>
+      <form class="newsletter-form" id="newsletterForm" novalidate>
+        <label class="sr-only" for="nlEmail">Email address</label>
+        <div class="nl-row">
+          <input type="email" class="input" id="nlEmail" name="email" placeholder="you@email.com" autocomplete="email" required>
+          <button class="btn btn-berry" type="submit">Sign up →</button>
+        </div>
+        <p class="notify-status" id="nlStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
   </div>
-</footer>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer data-ka-footer></footer>
 
 <div class="scroll-pill" id="scrollPill">Scroll</div>
 
+<script src="config.js"></script>
 <script src="products.js"></script>
+<script src="core.js"></script>
 <script src="app.js"></script>
+<script src="home.js"></script>
 </body>
 </html>

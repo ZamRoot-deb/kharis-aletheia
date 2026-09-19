@@ -1,0 +1,151 @@
+/* KHARIS & ALETHEIA — product page (catalog: gallery, size/qty, accordions, related) */
+
+.visually-hidden{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* ---------- not-found state ---------- */
+.notfound-actions{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap}
+
+/* ---------- size radio group (matches shop.css quick-add) ---------- */
+.size-group{display:flex;flex-wrap:wrap;gap:.6rem}
+.size-group input[type="radio"]{
+  position:absolute;opacity:0;width:1px;height:1px;overflow:hidden;
+}
+.size-group label{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:3em;padding:.6em .9em;cursor:pointer;
+  border:1px solid var(--border-strong);color:var(--fg);
+  font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;
+  transition:background .15s,color .15s,border-color .15s;
+}
+.size-group label:hover{background:var(--table-row)}
+.size-group input[type="radio"]:checked + label{
+  background:var(--gold);color:#120a02;border-color:var(--gold);
+}
+.size-group input[type="radio"]:focus-visible + label{
+  outline:2px solid var(--gold);outline-offset:2px;
+}
+html[data-theme="light"] .size-group input[type="radio"]:checked + label{color:#fffaf1}
+
+.pd-size-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.6rem}
+.pd-size-head label{margin:0}
+.size-guide-link{
+  background:none;border:0;padding:0;cursor:pointer;
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);text-decoration:underline;text-underline-offset:3px;
+}
+.size-guide-link:hover{color:var(--gold)}
+
+/* ---------- qty stepper ---------- */
+.qty-stepper{display:inline-flex;align-items:stretch;border:1px solid var(--border-strong);width:max-content}
+.qty-stepper button{
+  width:2.4em;background:none;border:0;color:var(--gold);cursor:pointer;
+  font-size:1rem;line-height:1;font-family:var(--font-mono);
+}
+.qty-stepper button:hover{background:var(--table-row)}
+.qty-stepper input{
+  width:3.4em;text-align:center;background:var(--surface);color:var(--fg);
+  border:0;border-left:1px solid var(--border-strong);border-right:1px solid var(--border-strong);
+  font-family:var(--font-mono);font-size:.85rem;padding:.6em .2em;outline:none;
+  -moz-appearance:textfield;
+}
+.qty-stepper input::-webkit-outer-spin-button,.qty-stepper input::-webkit-inner-spin-button{
+  -webkit-appearance:none;margin:0;
+}
+.qty-stepper input:focus-visible{box-shadow:inset 0 0 0 2px var(--gold)}
+
+/* ---------- actions row: add to cart / wishlist / share ---------- */
+.pd-actions{display:flex;align-items:stretch;gap:.7rem;max-width:420px;margin-top:.4rem}
+.pd-actions .btn-solid{flex:1;max-width:none}
+.wish-btn,.share-btn{
+  flex-shrink:0;width:3.2em;display:flex;align-items:center;justify-content:center;
+  background:none;border:1px solid var(--border-strong);color:var(--gold);cursor:pointer;
+  transition:box-shadow .2s,color .2s,border-color .2s;
+}
+.wish-btn:hover,.share-btn:hover{box-shadow:0 0 14px rgba(216,178,106,.3)}
+.wish-btn.active{color:var(--berry-hi);border-color:var(--berry)}
+html[data-theme="light"] .wish-btn.active{color:var(--berry)}
+.share-btn{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;width:auto;padding:0 1.1em}
+@media (prefers-reduced-motion:no-preference){
+  .wish-btn.active svg{animation:pd-wish-pop .3s ease}
+}
+@keyframes pd-wish-pop{0%{transform:scale(1)}45%{transform:scale(1.28)}100%{transform:scale(1)}}
+
+.lead-time-note{color:var(--muted);font-size:.74rem;letter-spacing:.06em;margin-top:1rem}
+
+/* ---------- sold state ---------- */
+.sold-price{
+  font-family:var(--font-display);font-weight:900;font-size:1.05rem;
+  color:var(--berry-hi);letter-spacing:.04em;text-transform:uppercase;margin:.6rem 0 1rem;
+}
+html[data-theme="light"] .sold-price{color:var(--berry)}
+.sold-copy{color:var(--muted);font-size:.88rem;margin-bottom:1.6rem;max-width:48ch}
+
+/* ---------- maker attribution ---------- */
+.pd-maker{
+  display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:.5em;
+  margin:0 0 1.6rem;padding:.9rem 1.1rem;border:1px solid var(--border);background:var(--surface);
+  font-size:.78rem;transition:border-color .2s;
+}
+.pd-maker:hover{border-color:var(--border-strong)}
+.pd-maker-label{color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-size:.62rem}
+.pd-maker-name{color:var(--gold);font-weight:700}
+.pd-maker-series{color:var(--muted)}
+
+/* ---------- accordions ---------- */
+.pd-accordion{margin-top:2.4rem;border-top:1px solid var(--border)}
+.acc-item{border-bottom:1px solid var(--border)}
+.acc-trigger{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:none;border:0;cursor:pointer;text-align:left;
+  padding:1.1rem 0;color:var(--fg);
+  font-family:var(--font-mono);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
+}
+.acc-trigger:hover{color:var(--gold)}
+.acc-trigger .acc-icon{
+  flex-shrink:0;width:1em;height:1em;position:relative;color:var(--gold);
+}
+.acc-trigger .acc-icon::before,.acc-trigger .acc-icon::after{
+  content:"";position:absolute;background:currentColor;
+}
+.acc-trigger .acc-icon::before{left:0;top:50%;width:100%;height:2px;transform:translateY(-50%)}
+.acc-trigger .acc-icon::after{
+  top:0;left:50%;width:2px;height:100%;transform:translateX(-50%);
+  transition:transform .2s;
+}
+.acc-trigger[aria-expanded="true"] .acc-icon::after{transform:translateX(-50%) scaleY(0)}
+.acc-panel{padding:0 0 1.4rem;color:var(--muted);font-size:.85rem;max-width:62ch}
+.acc-panel p{margin-bottom:.8rem}
+.acc-panel p:last-child{margin-bottom:0}
+.acc-panel a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- recently viewed ---------- */
+.recently-viewed{margin-top:5rem}
+.recently-viewed h2{margin-bottom:1.6rem}
+.rv-strip{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.4rem;scrollbar-width:thin}
+.rv-card{flex:0 0 140px;min-width:0}
+.rv-card .prod-img{aspect-ratio:1;border:1px solid var(--border);background:#000;overflow:hidden}
+.rv-card .prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.rv-card:hover .prod-img img{transform:scale(1.06)}
+.rv-card .prod-name{font-size:.66rem;margin-top:.5rem;letter-spacing:.04em}
+.rv-card .prod-price{font-size:.72rem;margin-top:.15rem}
+
+/* ---------- not-found / general safety net ---------- */
+.pill:focus-visible,.btn:focus-visible,a:focus-visible,button:focus-visible,
+input:focus-visible,.acc-trigger:focus-visible{
+  outline:2px solid var(--gold);outline-offset:2px;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .wish-btn,.share-btn,.acc-icon::after,.rv-card .prod-img img{transition:none}
+}
+
+@media (max-width:900px){
+  .pd-maker{max-width:100%}
+}
+@media (max-width:420px){
+  .pd-actions{flex-wrap:wrap}
+  .rv-card{flex-basis:110px}
+}

@@ -1,0 +1,9 @@
+{
+  "name": "kharis-aletheia",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node tools/check-links.mjs && node tools/check-html.mjs && node tools/check-contract.mjs",
+    "preflight": "node tools/preflight.mjs"
+  }
+}

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TEE STUDIO — KHARIS &amp; ALETHEIA</title>
+<meta name="description" content="Pick a print, place it your way, scale it, rotate it. Design your own Kharis & Aletheia tee, long-sleeve, crewneck or hoodie — cut and sewn to your exact layout.">
+<link rel="canonical" href="https://www.kharisandaletheia.com/studio.html">
+<meta property="og:site_name" content="KHARIS &amp; ALETHEIA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TEE STUDIO — KHARIS &amp; ALETHEIA">
+<meta property="og:description" content="Pick a print, place it your way, scale it, rotate it. Design your own Kharis & Aletheia tee, long-sleeve, crewneck or hoodie — cut and sewn to your exact layout.">
+<meta property="og:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta property="og:url" content="https://www.kharisandaletheia.com/studio.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TEE STUDIO — KHARIS &amp; ALETHEIA">
+<meta name="twitter:description" content="Pick a print, place it your way, scale it, rotate it. Design your own Kharis & Aletheia tee, long-sleeve, crewneck or hoodie — cut and sewn to your exact layout.">
+<meta name="twitter:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta name="theme-color" content="#070308" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6efe2" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ka_theme') || 'dark');</script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="studio.css">
+</head>
+<body data-page="studio">
+
+<noscript>
+  <div class="wrap" style="padding:2rem 0 0">
+    <p class="micro">JavaScript required</p>
+    <p class="lede">The Tee Studio builder needs JavaScript enabled to load the live preview and pricing. Please enable it, or <a href="contact.html">contact us</a> about a custom piece.</p>
+  </div>
+</noscript>
+
+<div class="page">
+
+  <section class="page-hero plain" style="min-height:40vh">
+    <div class="wrap">
+      <p class="micro">Custom · made to order</p>
+      <h1 class="h-display glitch glitch-anim" data-text="TEE STUDIO">TEE STUDIO</h1>
+      <p class="lede">Pick a print, place it your way, scale it, rotate it. We cut and sew your exact layout — nothing leaves the floor until it matches what you see here.</p>
+    </div>
+  </section>
+
+  <section class="studio-shell">
+    <div class="wrap">
+      <p class="link-notice" id="linkNotice" role="status" aria-live="polite"></p>
+
+      <div class="studio-layout">
+
+        <!-- ===== LEFT: live preview stage ===== -->
+        <div class="stage-col">
+          <div class="stage-card">
+            <div class="stage-toolbar">
+              <div class="view-toggle" role="group" aria-label="Garment view">
+                <button type="button" id="btnViewFront" class="vt-btn on" aria-pressed="true">Front</button>
+                <button type="button" id="btnViewBack" class="vt-btn" aria-pressed="false">Back</button>
+              </div>
+              <div class="stage-actions">
+                <button type="button" id="btnUndo" class="icon-btn" disabled>↺ Undo</button>
+                <button type="button" id="btnRandomize" class="icon-btn">⚄ Randomize</button>
+                <button type="button" id="btnReset" class="icon-btn">Reset</button>
+              </div>
+            </div>
+
+            <div class="stage-surface" id="stageSurface" tabindex="0" role="group"
+                 aria-label="Print position on the garment. Drag with mouse or touch to move the print, or use the arrow keys to nudge it — hold Shift for a bigger step, Home to re-centre.">
+              <div id="stageMount"></div>
+              <p class="stage-note" id="stageNote" aria-live="polite"></p>
+            </div>
+
+            <p class="drag-hint">Drag the print to reposition it · Arrow keys nudge · Shift+Arrow moves further · Home re-centres.</p>
+            <div class="stage-linkrow">
+              <button type="button" id="btnCopyLink" class="btn btn-gold">Copy shareable link</button>
+            </div>
+          </div>
+
+          <div class="spec-sheet" id="specSheet" aria-live="polite"></div>
+        </div>
+
+        <!-- ===== RIGHT: stepped control panel ===== -->
+        <div class="panel-col">
+
+          <div class="step" id="stepGarment">
+            <div class="step-head"><span class="s-num">1</span><h2>Garment</h2></div>
+            <p class="step-hint">Heavyweight cotton, cut and sewn to order.</p>
+            <div class="garment-grid" id="garmentGrid"></div>
+          </div>
+
+          <div class="step" id="stepColour">
+            <div class="step-head"><span class="s-num">2</span><h2>Colour</h2></div>
+            <p class="step-hint">The base fabric colour your print sits on.</p>
+            <div class="colour-grid" id="colourGrid"></div>
+          </div>
+
+          <div class="step" id="stepPrint">
+            <div class="step-head"><span class="s-num">3</span><h2>Print</h2></div>
+            <p class="step-hint">Kente, ankara and adinkra — every print carries a meaning.</p>
+            <div class="print-tabs" id="printTabs"></div>
+            <p class="print-empty" id="printEmpty" hidden>You haven't saved any prints yet. Design one in the <a href="lab.html" style="color:var(--gold)">Print Lab</a> and it'll show up here.</p>
+            <div class="print-grid" id="printGrid"></div>
+            <a class="print-lab-link" href="lab.html">Design your own in the Print Lab →</a>
+          </div>
+
+          <div class="step" id="stepPlacement">
+            <div class="step-head"><span class="s-num">4</span><h2>Placement</h2></div>
+            <p class="step-hint">Where the print sits on the garment. Some placements carry a small surcharge.</p>
+            <div class="placement-grid" id="placementGrid"></div>
+          </div>
+
+          <div class="step" id="stepFineTune">
+            <div class="step-head"><span class="s-num">5</span><h2>Fine-tune</h2></div>
+            <p class="step-hint">Scale and rotate the print, or nudge its position.</p>
+            <div class="ft-field">
+              <div class="ft-label-row"><label for="ftScale">Scale</label><output id="ftScaleOut" for="ftScale">×1.00</output></div>
+              <input type="range" id="ftScale" class="range-input" min="0.4" max="2.5" step="0.01" value="1">
+            </div>
+            <div class="ft-field">
+              <div class="ft-label-row"><label for="ftRotate">Rotate</label><output id="ftRotateOut" for="ftRotate">0°</output></div>
+              <input type="range" id="ftRotate" class="range-input" min="0" max="360" step="1" value="0">
+            </div>
+            <div class="ft-field">
+              <div class="ft-label-row"><label id="ftPosLabel">Position</label></div>
+              <div class="ft-nudge" role="group" aria-labelledby="ftPosLabel">
+                <button type="button" class="nudge-up" data-nudge="up" aria-label="Move print up">↑</button>
+                <button type="button" class="nudge-left" data-nudge="left" aria-label="Move print left">←</button>
+                <button type="button" class="nudge-center" data-nudge="center" aria-label="Centre print">●</button>
+                <button type="button" class="nudge-right" data-nudge="right" aria-label="Move print right">→</button>
+                <button type="button" class="nudge-down" data-nudge="down" aria-label="Move print down">↓</button>
+              </div>
+            </div>
+            <button type="button" id="ftReset" class="btn btn-berry ft-reset">Reset scale, rotation &amp; position</button>
+          </div>
+
+          <div class="step" id="stepSize">
+            <div class="step-head"><span class="s-num">6</span><h2>Size &amp; quantity</h2></div>
+            <p class="step-hint">Not sure which size? Check the <a href="sizing.html" style="color:var(--gold)">size charts</a>.</p>
+            <div class="size-grid" id="sizeGrid" role="radiogroup" aria-label="Size"></div>
+            <div class="qty-row">
+              <span class="size-guide-link">Quantity</span>
+              <div class="ci-qty">
+                <button type="button" id="qtyMinus" aria-label="Decrease quantity">−</button>
+                <span id="qtyValue">1</span>
+                <button type="button" id="qtyPlus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-bar">
+            <div class="price-breakdown" id="priceBreakdown"></div>
+            <button type="button" id="btnAddToCart" class="btn btn-solid">Add to cart</button>
+            <p class="lead-time" id="leadTimeNote">Made to order · ships in 7–10 working days</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== how the studio works ===== -->
+  <section class="hiw-strip">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <p class="micro">How the studio works</p>
+        <h2 class="h-display h-lg">FOUR STEPS TO A ONE-OF-ONE</h2>
+      </div>
+      <div class="step-grid">
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <h3>Pick your canvas</h3>
+          <p>Choose the garment, the colour and a print with a real story — kente, ankara or adinkra.</p>
+        </div>
+        <div class="step-card reveal d1">
+          <div class="step-num">02</div>
+          <h3>Place it your way</h3>
+          <p>Drag the print onto the garment, scale it, rotate it, choose front or back. The preview updates live.</p>
+        </div>
+        <div class="step-card reveal d2">
+          <div class="step-num">03</div>
+          <h3>Lock your size</h3>
+          <p>Pick a size, set the quantity, and read back the exact spec sheet the workshop will cut from.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <p class="micro">Before you order</p>
+        <h2 class="h-display h-lg">STUDIO FAQ</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>Can I upload my own pattern or artwork?</summary>
+          <div class="faq-body">Not yet — the Tee Studio only works with prints built in our <a href="lab.html" style="color:var(--gold)">Print Lab</a> or saved from it. If you have your own artwork you'd like printed, <a href="contact.html" style="color:var(--gold)">get in touch</a> and we'll see what we can do.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How long does a custom piece take?</summary>
+          <div class="faq-body">Every custom order is cut and sewn after you buy — allow 7–10 working days before it ships. There's no warehouse stock to speed this up; that's what makes it yours alone.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I change my design after ordering?</summary>
+          <div class="faq-body">Once an order is placed, cutting starts quickly, so changes can't be guaranteed. If you need to adjust something, <a href="contact.html" style="color:var(--gold)">contact us</a> as soon as possible and we'll do what we can.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Ordering more than a few pieces?</summary>
+          <div class="faq-body">For team or event orders, the <a href="bulk.html" style="color:var(--gold)">Crew &amp; Bulk</a> page has volume pricing and a quote calculator built for exactly that.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What if the placement I want isn't listed?</summary>
+          <div class="faq-body">The Studio covers chest, diagonal sweep, side stripe, pocket, both sleeves and all-over. If you need something outside that list, <a href="contact.html" style="color:var(--gold)">message us</a> — we take on custom placements case by case.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer data-ka-footer></footer>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
+<script src="core.js"></script>
+<script src="prints.js"></script>
+<script src="app.js"></script>
+<script src="studio.js"></script>
+</body>
+</html>

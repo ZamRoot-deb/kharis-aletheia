@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GIFT CARDS — KHARIS &amp; ALETHEIA</title>
+<meta name="description" content="Digital Kharis & Aletheia gift cards from £10 to £500 — personalise a message, pick a send date, put towards any made-to-order piece.">
+<link rel="canonical" href="https://www.kharisandaletheia.com/gift.html">
+<meta property="og:site_name" content="KHARIS &amp; ALETHEIA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GIFT CARDS — KHARIS &amp; ALETHEIA">
+<meta property="og:description" content="Digital Kharis & Aletheia gift cards from £10 to £500 — personalise a message, pick a send date, put towards any made-to-order piece.">
+<meta property="og:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta property="og:url" content="https://www.kharisandaletheia.com/gift.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GIFT CARDS — KHARIS &amp; ALETHEIA">
+<meta name="twitter:description" content="Digital Kharis & Aletheia gift cards from £10 to £500 — personalise a message, pick a send date, put towards any made-to-order piece.">
+<meta name="twitter:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta name="theme-color" content="#070308" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6efe2" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="site.webmanifest">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-+i6XpyNpu+XQovUjYyaiqo8r4WKB+csly5JfkGt1iDk='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ka_theme') || 'dark');</script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="forms.css">
+</head>
+<body data-page="gift">
+
+<div class="page">
+
+  <section class="page-hero plain" style="min-height:40vh">
+    <div class="wrap">
+      <p class="micro">Give grace &amp; truth</p>
+      <h1 class="h-display glitch glitch-anim" data-text="GIFT CARDS">GIFT CARDS</h1>
+      <p class="lede">A digital gift card, personalised and sent on the day you choose. They pick the piece — cut and sewn to order, same as everything else.</p>
+    </div>
+  </section>
+
+  <section style="padding:4rem 0 2rem">
+    <div class="wrap">
+      <form id="giftForm" novalidate>
+        <div class="calc-shell reveal">
+
+          <!-- form fields -->
+          <div class="calc-card">
+            <fieldset class="pd-field wide">
+              <legend class="field-legend">Amount</legend>
+              <div class="amount-row" id="gfAmountRow"></div>
+              <div class="amount-custom">
+                <label for="gfCustomAmount">Or a custom amount (£10–£500)</label>
+                <input type="number" id="gfCustomAmount" min="10" max="500" step="1" inputmode="numeric" placeholder="e.g. 60">
+              </div>
+              <span class="field-err" id="gfAmountErr" role="alert"></span>
+            </fieldset>
+
+            <div class="form-grid">
+              <div class="pd-field">
+                <label for="gfTo">Recipient name</label>
+                <input type="text" id="gfTo" name="to" autocomplete="off" required>
+                <span class="field-err" role="alert"></span>
+              </div>
+              <div class="pd-field">
+                <label for="gfToEmail">Recipient email</label>
+                <input type="email" id="gfToEmail" name="email" autocomplete="off" required>
+                <span class="field-err" role="alert"></span>
+              </div>
+              <div class="pd-field">
+                <label for="gfFrom">Your name</label>
+                <input type="text" id="gfFrom" name="from" autocomplete="name" required>
+                <span class="field-err" role="alert"></span>
+              </div>
+              <div class="pd-field">
+                <label for="gfDate">Send date</label>
+                <input type="date" id="gfDate" name="sendOn" required>
+                <span class="field-err" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="pd-field wide">
+              <label for="gfMessage">Message <span class="field-hint">(optional)</span></label>
+              <textarea id="gfMessage" name="message" rows="4" maxlength="200" placeholder="Write something they'll want to read twice."></textarea>
+              <div class="char-count" id="gfMsgCount">0 / 200</div>
+              <span class="field-err" role="alert"></span>
+            </div>
+
+            <div class="hp-field" aria-hidden="true">
+              <label for="gfHp">Leave this field empty</label>
+              <input type="text" id="gfHp" name="company" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button type="submit" class="btn btn-solid" id="gfAdd" style="max-width:320px">Add to cart</button>
+            <p class="form-status" id="gfStatus" role="status" aria-live="polite"></p>
+            <div class="result-panel" id="gfResult" hidden></div>
+          </div>
+
+          <!-- live preview -->
+          <div class="gift-preview-wrap">
+            <div id="gfPreview"></div>
+            <p class="gift-preview-note">Live preview — your actual card is generated the same way when it's sent.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section style="padding:3rem 0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="micro">How it works</p>
+        <h2 class="h-display h-lg">SIMPLE, DIGITAL, PERSONAL</h2>
+      </div>
+      <div class="step-grid">
+        <div class="step-card reveal">
+          <p class="step-num">01</p>
+          <h3>Choose an amount</h3>
+          <p>Pick a preset or set your own, from £10 to £500.</p>
+        </div>
+        <div class="step-card reveal d1">
+          <p class="step-num">02</p>
+          <h3>Personalise it</h3>
+          <p>Add a recipient, a message and the day it should land.</p>
+        </div>
+        <div class="step-card reveal d2">
+          <p class="step-num">03</p>
+          <h3>We deliver on the day</h3>
+          <p>Sent by email on the send date you chose — the confirmation is the card.</p>
+        </div>
+        <div class="step-card reveal d3">
+          <p class="step-num">04</p>
+          <h3>They spend it their way</h3>
+          <p>Email us the confirmation when they're ready and we'll apply it to their order by hand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TERMS ============ -->
+  <section style="padding:2rem 0 7rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="micro">The fine print</p>
+        <h2 class="h-display h-lg">GIFT CARD TERMS</h2>
+      </div>
+      <div class="terms-block reveal">
+        <p>Gift cards are delivered digitally by email on the send date you choose — no physical card is posted. Validity and any other terms are set at the time of issue and confirmed in the email your recipient receives.</p>
+        <p>Gift cards are applied by hand against any made-to-order Kharis &amp; Aletheia piece — forward your gift card confirmation email when placing an order and we'll credit the balance, combining it with another payment method to cover any remainder. They cannot be exchanged for cash and cannot be used to purchase further gift cards.</p>
+        <p>Made a mistake with a recipient's details? <a href="contact.html" style="color:var(--gold);text-decoration:underline">Contact us</a> before the send date and we'll help put it right.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer data-ka-footer></footer>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
+<script src="core.js"></script>
+<script src="app.js"></script>
+<script src="gift.js"></script>
+</body>
+</html>

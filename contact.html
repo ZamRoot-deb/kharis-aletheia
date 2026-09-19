@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CONTACT — KHARIS &amp; ALETHEIA</title>
+<meta name="description" content="Get in touch with Kharis & Aletheia about an order, sizing, a custom print, bulk enquiries or press. We reply within two working days.">
+<link rel="canonical" href="https://www.kharisandaletheia.com/contact.html">
+<meta property="og:site_name" content="KHARIS &amp; ALETHEIA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CONTACT — KHARIS &amp; ALETHEIA">
+<meta property="og:description" content="Get in touch with Kharis & Aletheia about an order, sizing, a custom print, bulk enquiries or press. We reply within two working days.">
+<meta property="og:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta property="og:url" content="https://www.kharisandaletheia.com/contact.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CONTACT — KHARIS &amp; ALETHEIA">
+<meta name="twitter:description" content="Get in touch with Kharis & Aletheia about an order, sizing, a custom print, bulk enquiries or press. We reply within two working days.">
+<meta name="twitter:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta name="theme-color" content="#070308" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6efe2" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="site.webmanifest">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-+i6XpyNpu+XQovUjYyaiqo8r4WKB+csly5JfkGt1iDk='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ka_theme') || 'dark');</script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="forms.css">
+</head>
+<body data-page="contact">
+
+<div class="page">
+
+  <section class="page-hero plain" style="min-height:36vh">
+    <div class="wrap">
+      <p class="micro">Talk to us</p>
+      <h1 class="h-display glitch glitch-anim" data-text="CONTACT">CONTACT</h1>
+      <p class="lede">Order question, sizing help, a custom idea, a bulk brief or press — tell us what's up. We reply within two working days.</p>
+    </div>
+  </section>
+
+  <section style="padding:4rem 0 2rem">
+    <div class="wrap">
+      <div class="contact-shell">
+
+        <form id="contactForm" class="calc-card reveal" novalidate>
+          <div class="form-grid">
+            <div class="pd-field">
+              <label for="ctName">Name</label>
+              <input type="text" id="ctName" name="name" autocomplete="name" required>
+              <span class="field-err" role="alert"></span>
+            </div>
+            <div class="pd-field">
+              <label for="ctEmail">Email</label>
+              <input type="email" id="ctEmail" name="email" autocomplete="email" required>
+              <span class="field-err" role="alert"></span>
+            </div>
+            <div class="pd-field">
+              <label for="ctTopic">Topic</label>
+              <select id="ctTopic" name="topic" required>
+                <option value="" disabled selected>Choose a topic</option>
+                <option value="order">Order enquiry</option>
+                <option value="sizing">Sizing help</option>
+                <option value="custom">Custom print / design</option>
+                <option value="bulk">Crew &amp; Bulk</option>
+                <option value="press">Press</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-err" role="alert"></span>
+            </div>
+            <div class="pd-field">
+              <label for="ctRef">Order reference <span class="field-hint">(optional)</span></label>
+              <input type="text" id="ctRef" name="orderRef" placeholder="e.g. KA-482913" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="pd-field wide">
+            <label for="ctMessage">Message</label>
+            <textarea id="ctMessage" name="message" rows="6" required placeholder="Tell us what's going on — the more detail, the faster we can help."></textarea>
+            <span class="field-err" role="alert"></span>
+          </div>
+
+          <div class="hp-field" aria-hidden="true">
+            <label for="ctHp">Leave this field empty</label>
+            <input type="text" id="ctHp" name="company" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn btn-solid" id="ctSubmit" style="max-width:280px">Send message</button>
+          <p class="form-status" id="ctStatus" role="status" aria-live="polite"></p>
+          <div class="result-panel" id="ctResult" hidden></div>
+        </form>
+
+        <aside class="contact-side reveal d1">
+          <div class="side-card">
+            <h3>Write to us directly</h3>
+            <p>Prefer email? Reach us here — we reply within two working days.</p>
+            <a id="ctDirectEmail" class="direct-email link-arrow" data-contact-email-link href="#">Loading…</a>
+          </div>
+          <div class="side-card">
+            <h3>Before you write</h3>
+            <p>Sizing question? Check the <a href="sizing.html" style="color:var(--gold);text-decoration:underline">size charts</a> first.</p>
+            <p>Order question? Have your reference (e.g. <code>KA-482913</code>) to hand — it's optional, but it speeds things up.</p>
+            <p>Return or refund? Read the <a href="policies.html" style="color:var(--gold);text-decoration:underline">Refund Policy &amp; Terms</a>.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section style="padding:2rem 0 7rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="micro">Before you ask</p>
+        <h2 class="h-display h-lg">FREQUENTLY ASKED</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>Is everything really made to order?</summary>
+          <div class="faq-a"><p>Yes. Every piece is cut and sewn after you place your order — nothing sits pre-made in a warehouse. Production begins within 24 hours of purchase.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>How long will my order take?</summary>
+          <div class="faq-a"><p>Standard pieces ship in <span data-lead-time>7–10 working days</span>. Custom Tee Studio and Print Lab pieces follow the same window once your design is confirmed.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What's your returns policy?</summary>
+          <div class="faq-a"><p>Because each piece is made for you, we can't accept change-of-mind returns once production has started — but you can cancel for a full refund within 24 hours of ordering. If something arrives faulty, damaged or wrong, tell us within 14 days of delivery and we'll remake it or refund it in full, your choice. Full details on the <a href="policies.html">Refund Policy &amp; Terms</a> page.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>How do I know what size to order?</summary>
+          <div class="faq-a"><p>Check our <a href="sizing.html">size charts</a> before you order — measurements are in inches for tees, sweatshirts, hoodies and kids sizes. Between sizes, we recommend sizing up for a relaxed drape.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Do you ship internationally?</summary>
+          <div class="faq-a"><p>We ship worldwide. UK delivery is free over £75; international rates are calculated at checkout based on your country.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I get a custom print or design?</summary>
+          <div class="faq-a"><p>Yes — build one with the <a href="studio.html">Tee Studio</a>, or design a print from scratch in the <a href="lab.html">Print Lab</a>. Ordering for a team or event of 10 or more? Use <a href="bulk.html">Crew &amp; Bulk</a> instead.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer data-ka-footer></footer>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
+<script src="core.js"></script>
+<script src="app.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>

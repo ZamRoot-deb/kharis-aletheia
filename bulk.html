@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CREW &amp; BULK — KHARIS &amp; ALETHEIA</title>
+<meta name="description" content="Matching made-to-order prints for crews, events, brands, choirs and weddings. Live quote calculator, tiered pricing from 10 pieces.">
+<link rel="canonical" href="https://www.kharisandaletheia.com/bulk.html">
+<meta property="og:site_name" content="KHARIS &amp; ALETHEIA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CREW &amp; BULK — KHARIS &amp; ALETHEIA">
+<meta property="og:description" content="Matching made-to-order prints for crews, events, brands, choirs and weddings. Live quote calculator, tiered pricing from 10 pieces.">
+<meta property="og:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta property="og:url" content="https://www.kharisandaletheia.com/bulk.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CREW &amp; BULK — KHARIS &amp; ALETHEIA">
+<meta name="twitter:description" content="Matching made-to-order prints for crews, events, brands, choirs and weddings. Live quote calculator, tiered pricing from 10 pieces.">
+<meta name="twitter:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta name="theme-color" content="#070308" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6efe2" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="site.webmanifest">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-+i6XpyNpu+XQovUjYyaiqo8r4WKB+csly5JfkGt1iDk='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ka_theme') || 'dark');</script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="forms.css">
+</head>
+<body data-page="bulk">
+
+<div class="page">
+
+  <section class="page-hero plain" style="min-height:40vh">
+    <div class="wrap">
+      <p class="micro">Teams, events &amp; brands</p>
+      <h1 class="h-display glitch glitch-anim" data-text="CREW & BULK">CREW &amp; BULK</h1>
+      <p class="lede">Matching prints for the whole group — cut and sewn to order, priced by the piece. Get a live estimate below, then send us the brief.</p>
+    </div>
+  </section>
+
+  <!-- ============ WHO IT'S FOR ============ -->
+  <section style="padding:5rem 0 2rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="micro">Who this is for</p>
+        <h2 class="h-display h-lg">ONE PRINT, WHOLE GROUP</h2>
+        <p class="lede">If more than one person needs to show up in the same cloth, this is the route.</p>
+      </div>
+      <div class="who-grid">
+        <div class="who-card reveal">
+          <h3>Crews &amp; teams</h3>
+          <p>Sports teams, work crews and staff kits — one print, everyone matching, sizes handled per person.</p>
+        </div>
+        <div class="who-card reveal d1">
+          <h3>Events &amp; reunions</h3>
+          <p>Conferences, retreats, family reunions and anniversaries — a run made for one date, worn long after.</p>
+        </div>
+        <div class="who-card reveal d2">
+          <h3>Brands &amp; businesses</h3>
+          <p>Retail drops, collabs and staff merch on real heavyweight cotton — not a print-shop shortcut.</p>
+        </div>
+        <div class="who-card reveal">
+          <h3>Choirs &amp; churches</h3>
+          <p>Choir robeswear, anniversary cloth and ministry tees — colour and print matched across the group.</p>
+        </div>
+        <div class="who-card reveal d1">
+          <h3>Weddings</h3>
+          <p>Aso-ebi coordination, bridal party sets and after-party tees — cut for the whole wedding party.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CALCULATOR + ENQUIRY ============ -->
+  <section style="padding:3rem 0 2rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="micro">Get a quote</p>
+        <h2 class="h-display h-lg">CALCULATE YOUR RUN</h2>
+        <p class="lede">This is a live estimate, not an invoice — your exact price is confirmed once we've seen your brief.</p>
+      </div>
+
+      <div class="note-strip reveal">
+        <b>Minimum order is 10 pieces</b> per enquiry, mixed sizes welcome — that's the smallest run we can cut and price as bulk. Need fewer than that? Head to the <a href="shop.html">shop</a> or build one in the <a href="studio.html">Tee Studio</a> instead.
+      </div>
+
+      <form id="bulkForm" novalidate>
+        <div class="calc-shell reveal">
+
+          <!-- controls -->
+          <div class="calc-card">
+            <div class="pd-field">
+              <label for="bkGarment">Garment</label>
+              <select id="bkGarment" name="garment"></select>
+            </div>
+
+            <div class="pd-field">
+              <label for="bkQtyInput">Quantity</label>
+              <div class="qty-control">
+                <div class="stepper">
+                  <button type="button" id="bkQtyDec" aria-label="Decrease quantity by one">−</button>
+                  <input type="number" id="bkQtyInput" min="10" max="500" step="1" value="25" inputmode="numeric">
+                  <button type="button" id="bkQtyInc" aria-label="Increase quantity by one">+</button>
+                </div>
+                <input type="range" id="bkQtyRange" class="qty-slider" min="10" max="500" step="1" value="25" aria-label="Quantity, from 10 to 500 pieces">
+              </div>
+            </div>
+
+            <fieldset class="pd-field wide">
+              <legend class="field-legend">Print approach</legend>
+              <div class="choice-row">
+                <div class="choice-card">
+                  <input type="radio" name="approach" id="apHouse" value="house" checked>
+                  <label for="apHouse">
+                    <span class="cc-name">House print</span>
+                    <span class="cc-note">Pick from our kente, ankara &amp; adinkra prints. Fastest turnaround.</span>
+                  </label>
+                </div>
+                <div class="choice-card">
+                  <input type="radio" name="approach" id="apPlacement" value="placement">
+                  <label for="apPlacement">
+                    <span class="cc-name">Custom placement</span>
+                    <span class="cc-note">Your chosen print, positioned to spec. Small setup, confirmed in your quote.</span>
+                  </label>
+                </div>
+                <div class="choice-card">
+                  <input type="radio" name="approach" id="apArtwork" value="artwork">
+                  <label for="apArtwork">
+                    <span class="cc-name">Your artwork</span>
+                    <span class="cc-note">Send your own logo or design — we confirm feasibility before we cut.</span>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="pd-field wide" style="margin-bottom:0">
+              <legend class="field-legend">Size breakdown <span class="field-hint">must add up to your quantity</span></legend>
+              <div class="size-breakdown" id="bkSizeBreakdown"></div>
+              <div class="sb-total" id="bkSbTotal">
+                <span>Allocated <b class="sb-count" id="bkSbCount">0</b> / <b id="bkSbTarget">25</b></span>
+                <button type="button" class="link-arrow" id="bkSplitEven">Split evenly →</button>
+              </div>
+              <p class="field-err" id="bkSbErr" role="alert"></p>
+            </fieldset>
+          </div>
+
+          <!-- live summary -->
+          <div class="calc-summary">
+            <div class="calc-card">
+              <p class="estimate-tag">Estimate · confirmed in your quote</p>
+              <div class="size-table tier-table">
+                <table>
+                  <thead><tr><th>Quantity</th><th>Discount</th></tr></thead>
+                  <tbody id="bkTierBody"></tbody>
+                </table>
+              </div>
+              <div class="price-summary" role="status" aria-live="polite">
+                <div class="price-row"><span>Unit price</span><b id="bkUnit">£—</b></div>
+                <div class="price-row"><span>You save</span><b id="bkSave">£—</b></div>
+                <div class="price-row total"><span>Estimated total</span><b id="bkTotal">£—</b></div>
+              </div>
+              <p class="leadtime-note">Ships in <span data-lead-time>7–10 working days</span> from confirmed order. Larger runs can take a little longer — we'll always agree timing with you before production starts.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- enquiry details -->
+        <div class="calc-card reveal" style="margin-top:2rem">
+          <h3 class="h-display h-md" style="margin-bottom:1.6rem">YOUR DETAILS</h3>
+          <div class="form-grid">
+            <div class="pd-field">
+              <label for="bkName">Name</label>
+              <input type="text" id="bkName" name="name" autocomplete="name" required>
+              <span class="field-err" role="alert"></span>
+            </div>
+            <div class="pd-field">
+              <label for="bkOrg">Organisation <span class="field-hint">(optional)</span></label>
+              <input type="text" id="bkOrg" name="organisation" autocomplete="organization">
+            </div>
+            <div class="pd-field">
+              <label for="bkEmail">Email</label>
+              <input type="email" id="bkEmail" name="email" autocomplete="email" required>
+              <span class="field-err" role="alert"></span>
+            </div>
+            <div class="pd-field">
+              <label for="bkPhone">Phone <span class="field-hint">(optional)</span></label>
+              <input type="tel" id="bkPhone" name="phone" autocomplete="tel">
+              <span class="field-err" role="alert"></span>
+            </div>
+            <div class="pd-field">
+              <label for="bkDate">Event date <span class="field-hint">(optional)</span></label>
+              <input type="date" id="bkDate" name="eventDate">
+            </div>
+          </div>
+          <div class="pd-field wide">
+            <label for="bkMessage">Message <span class="field-hint">(optional)</span></label>
+            <textarea id="bkMessage" name="message" rows="4" placeholder="Tell us about your crew, event or brand — colours, deadlines, anything that helps us quote accurately."></textarea>
+          </div>
+
+          <div class="hp-field" aria-hidden="true">
+            <label for="bkHp">Leave this field empty</label>
+            <input type="text" id="bkHp" name="company" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn btn-solid" id="bkSubmit" style="max-width:320px">Send enquiry</button>
+          <p class="form-status" id="bkStatus" role="status" aria-live="polite"></p>
+          <div class="result-panel" id="bkResult" hidden></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section style="padding:3rem 0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="micro">How it works</p>
+        <h2 class="h-display h-lg">FOUR STEPS</h2>
+      </div>
+      <div class="step-grid">
+        <div class="step-card reveal">
+          <p class="step-num">01</p>
+          <h3>Send your brief</h3>
+          <p>Play with the calculator above, then send headcount, sizes and dates with the enquiry form.</p>
+        </div>
+        <div class="step-card reveal d1">
+          <p class="step-num">02</p>
+          <h3>We quote &amp; confirm</h3>
+          <p>A real quote back within two working days. Artwork, sizes and price locked in before we cut anything.</p>
+        </div>
+        <div class="step-card reveal d2">
+          <p class="step-num">03</p>
+          <h3>Cut &amp; sewn to order</h3>
+          <p>Your run is cut, printed and sewn as one batch — nothing pulled from a warehouse shelf.</p>
+        </div>
+        <div class="step-card reveal d3">
+          <p class="step-num">04</p>
+          <h3>Delivered</h3>
+          <p>Ships in <span data-lead-time>7–10 working days</span> once confirmed. Larger runs: timing agreed upfront.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section style="padding:2rem 0 7rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="micro">Questions</p>
+        <h2 class="h-display h-lg">CREW &amp; BULK FAQ</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>What's the minimum order?</summary>
+          <div class="faq-a"><p>10 pieces per enquiry. Mixed sizes are completely fine — the size breakdown in the calculator just needs to add up to your total quantity.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>How is bulk pricing worked out?</summary>
+          <div class="faq-a"><p>Discount tiers off the base garment price: 10+ pieces save 10%, 25+ save 15%, 50+ save 20%, 100+ save 25%. The calculator above shows your live estimate — your exact total is confirmed in the quote we send back.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>How long does a bulk order take?</summary>
+          <div class="faq-a"><p>Standard runs ship in <span data-lead-time>7–10 working days</span> from confirmed order. Larger runs or custom artwork can take longer — we'll always agree a realistic date with you before production starts.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I use my own artwork or logo?</summary>
+          <div class="faq-a"><p>Yes — choose "Your artwork" in the calculator and describe or attach it when you email us back. We'll confirm print feasibility and any setup before production begins.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What's the difference between the print approaches?</summary>
+          <div class="faq-a"><p>House print uses one of our existing kente, ankara or adinkra designs as-is — fastest option. Custom placement takes a house print but repositions it to your spec. Your artwork means you supply the design entirely. All three are cut and sewn to order.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What if my headcount changes after I enquire?</summary>
+          <div class="faq-a"><p>Let us know as early as possible. Once your quote is confirmed and production has started, changes get harder — but before that, we'll always try to adjust the quantity and requote.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer data-ka-footer></footer>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
+<script src="core.js"></script>
+<script src="app.js"></script>
+<script src="bulk.js"></script>
+</body>
+</html>

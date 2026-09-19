@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /checkout.html
+Disallow: /order.html
+Disallow: /404.html
+
+Sitemap: https://www.kharisandaletheia.com/sitemap.xml

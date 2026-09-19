@@ -4,19 +4,42 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SHOP — KHARIS &amp; ALETHEIA</title>
-<meta name="description" content="The full Kharis & Aletheia collection — African-print tees, sweatshirts and accessories, cut to order.">
+<meta name="description" content="The full Kharis & Aletheia collection — African-print tees, sweatshirts and accessories, cut to order. Search, filter by collection, price or maker.">
+<link rel="canonical" href="https://www.kharisandaletheia.com/shop.html">
+<meta property="og:site_name" content="KHARIS &amp; ALETHEIA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SHOP — KHARIS &amp; ALETHEIA">
+<meta property="og:description" content="The full Kharis & Aletheia collection — African-print tees, sweatshirts and accessories, cut to order. Search, filter by collection, price or maker.">
+<meta property="og:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta property="og:url" content="https://www.kharisandaletheia.com/shop.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SHOP — KHARIS &amp; ALETHEIA">
+<meta name="twitter:description" content="The full Kharis & Aletheia collection — African-print tees, sweatshirts and accessories, cut to order. Search, filter by collection, price or maker.">
+<meta name="twitter:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta name="theme-color" content="#070308" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6efe2" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ka_theme') || 'dark');</script>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shop.css">
 </head>
 <body data-page="shop">
 
+<noscript>
+  <div class="wrap" style="padding:2rem 0 0">
+    <p class="micro">JavaScript required</p>
+    <p class="lede">The shop catalog, search and filters need JavaScript enabled to load. Please enable it, or <a href="contact.html">contact us</a> and we'll help you find a piece.</p>
+  </div>
+</noscript>
+
 <div class="page">
   <section class="page-hero">
-    <img class="ph-img" src="assets/img/banner-tees.jpg" alt="Rack of African print tees">
+    <img decoding="async" class="ph-img" src="assets/img/banner-tees.webp" width="1600" height="900" alt="Rack of African print tees">
     <div class="ph-veil"></div>
     <div class="wrap">
       <p class="micro">Shop the print</p>
@@ -25,40 +48,91 @@
     </div>
   </section>
 
-  <section style="padding:4rem 0 8rem">
+  <section class="shop-section">
     <div class="wrap">
-      <div class="pill-row" id="shopPills">
-        <button class="pill on" data-cat="all">All pieces</button>
-        <button class="pill" data-cat="tees">Tees</button>
-        <button class="pill" data-cat="sweatshirts">Sweatshirts</button>
-        <button class="pill" data-cat="accessories">Accessories</button>
+
+      <div class="collection-banner" id="collectionBanner" hidden>
+        <img decoding="async" loading="lazy" id="collectionBannerImg" alt="" class="collection-banner-img">
+        <div class="collection-banner-copy">
+          <p class="micro" id="collectionBannerTag">Collection</p>
+          <h2 class="h-display h-md" id="collectionBannerName"></h2>
+          <p id="collectionBannerBlurb"></p>
+          <button type="button" class="pill" id="collectionBannerClear">Clear collection ✕</button>
+        </div>
       </div>
+
+      <div class="shop-toolbar">
+        <div class="tb-field tb-search">
+          <label for="shopSearch">Search</label>
+          <input type="search" id="shopSearch" placeholder="Name, colour, print, maker…" autocomplete="off">
+        </div>
+        <div class="tb-field tb-sort">
+          <label for="shopSort">Sort</label>
+          <select id="shopSort">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </div>
+        <fieldset class="tb-field tb-price">
+          <legend>Price (£)</legend>
+          <div class="tb-price-inputs">
+            <label for="priceMin" class="visually-hidden">Minimum price</label>
+            <input type="number" id="priceMin" min="0" step="1" placeholder="Min" inputmode="numeric">
+            <span aria-hidden="true" class="tb-price-sep">–</span>
+            <label for="priceMax" class="visually-hidden">Maximum price</label>
+            <input type="number" id="priceMax" min="0" step="1" placeholder="Max" inputmode="numeric">
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="pill-row" id="shopPills">
+        <button class="pill on" type="button" data-cat="all" aria-pressed="true">All pieces</button>
+        <button class="pill" type="button" data-cat="tees" aria-pressed="false">Tees</button>
+        <button class="pill" type="button" data-cat="sweatshirts" aria-pressed="false">Sweatshirts</button>
+        <button class="pill" type="button" data-cat="accessories" aria-pressed="false">Accessories</button>
+      </div>
+
+      <div class="pill-row" id="collections" aria-label="Browse by collection">
+        <a class="pill" href="shop.html?collection=kente-codes#collections">Kente Codes</a>
+        <a class="pill" href="shop.html?collection=adinkra-series#collections">Adinkra Series</a>
+        <a class="pill" href="shop.html?collection=ankara-after-dark#collections">Ankara After Dark</a>
+        <a class="pill" href="shop.html?collection=wraps-caps#collections">Wraps &amp; Caps</a>
+        <a class="pill" href="shop.html?collection=custom-prints#collections">Custom Prints</a>
+      </div>
+
+      <div class="shop-controls-row">
+        <label class="shop-toggle">
+          <input type="checkbox" id="showSoldToggle">
+          <span>Show sold archive</span>
+        </label>
+        <label class="shop-toggle">
+          <input type="checkbox" id="wishToggle">
+          <span>Wishlist only</span>
+        </label>
+        <button type="button" class="tb-clear" id="clearFilters">Clear filters</button>
+      </div>
+
+      <p class="shop-count" id="shopCount" role="status" aria-live="polite"></p>
+
       <div class="shop-grid" id="shopGrid"></div>
+
+      <div class="shop-empty" id="shopEmpty" hidden>
+        <p id="shopEmptyMsg">No pieces match those filters.</p>
+        <button type="button" class="btn btn-gold" id="shopEmptyClear">Clear filters</button>
+      </div>
+
     </div>
   </section>
 </div>
 
-<footer>
-  <div class="wrap foot-inner">
-    <a href="index.html">
-      <img class="logo-dark" src="assets/logo-horizontal-sm.png" alt="Kharis &amp; Aletheia">
-      <img class="logo-light" src="assets/logo-horizontal-navy.png" alt="Kharis &amp; Aletheia">
-    </a>
-    <p class="foot-line">Grace &amp; truth, woven in</p>
-    <nav class="foot-cols">
-      <a href="shop.html#tees">Tees</a>
-      <a href="shop.html#sweatshirts">Sweatshirts</a>
-      <a href="shop.html#accessories">Accessories</a>
-      <a href="index.html#lookbook">Lookbook</a>
-      <a href="sizing.html">Sizing</a>
-      <a href="about.html">About</a>
-      <a href="policies.html">Refund Policy &amp; Terms</a>
-    </nav>
-    <p class="foot-copy">© 2026 KHARIS &amp; ALETHEIA — ALL RIGHTS RESERVED</p>
-  </div>
-</footer>
+<footer data-ka-footer></footer>
 
+<script src="config.js"></script>
 <script src="products.js"></script>
+<script src="core.js"></script>
 <script src="app.js"></script>
+<script src="shop.js"></script>
 </body>
 </html>

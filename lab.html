@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRINT LAB — KHARIS &amp; ALETHEIA</title>
+<meta name="description" content="Remix kente, ankara and adinkra prints live — pick a palette, tune the pattern, save it and send it straight to the Tee Studio.">
+<link rel="canonical" href="https://www.kharisandaletheia.com/lab.html">
+<meta property="og:site_name" content="KHARIS &amp; ALETHEIA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PRINT LAB — KHARIS &amp; ALETHEIA">
+<meta property="og:description" content="Remix kente, ankara and adinkra prints live — pick a palette, tune the pattern, save it and send it straight to the Tee Studio.">
+<meta property="og:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta property="og:url" content="https://www.kharisandaletheia.com/lab.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PRINT LAB — KHARIS &amp; ALETHEIA">
+<meta name="twitter:description" content="Remix kente, ankara and adinkra prints live — pick a palette, tune the pattern, save it and send it straight to the Tee Studio.">
+<meta name="twitter:image" content="https://www.kharisandaletheia.com/assets/og-cover.jpg">
+<meta name="theme-color" content="#070308" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6efe2" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ka_theme') || 'dark');</script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="lab.css">
+</head>
+<body data-page="lab">
+
+<noscript>
+  <div class="wrap" style="padding:2rem 0 0">
+    <p class="micro">JavaScript required</p>
+    <p class="lede">The Print Lab needs JavaScript enabled to render and remix prints live. Please enable it, or <a href="contact.html">contact us</a> about a custom print.</p>
+  </div>
+</noscript>
+
+<div class="page">
+  <a class="lab-skip" href="#labControls">Skip to Print Lab controls</a>
+
+  <section class="page-hero plain">
+    <div class="wrap">
+      <p class="micro">Design studio</p>
+      <h1 class="h-display glitch glitch-anim" data-text="PRINT LAB">PRINT LAB</h1>
+      <p class="lede">Remix kente and ankara blocks live. Watch the layout update as you play.</p>
+    </div>
+  </section>
+
+  <section class="lab-section">
+    <div class="wrap">
+
+      <div id="labStatus" class="visually-hidden" role="status" aria-live="polite"></div>
+
+      <div class="pill-row" id="labFamilyTabs" role="group" aria-label="Print family">
+        <button type="button" class="pill" data-family="kente" aria-pressed="false">Kente</button>
+        <button type="button" class="pill" data-family="ankara" aria-pressed="false">Ankara</button>
+        <button type="button" class="pill" data-family="adinkra" aria-pressed="false">Adinkra</button>
+      </div>
+
+      <div class="lab-block lab-gallery-wrap">
+        <p class="lab-block-title">Start from</p>
+        <p class="lab-block-hint">Built-in prints for this family — pick one as a starting point, then make it yours.</p>
+        <div class="lab-gallery" id="labGallery" aria-label="Built-in print gallery" tabindex="0"></div>
+      </div>
+
+      <div class="lab-grid">
+        <div class="lab-controls" id="labControls">
+
+          <div class="lab-block">
+            <p class="lab-block-title">Palette</p>
+            <p class="lab-block-hint">House presets, or edit each swatch. 2–6 colours.</p>
+            <div class="lab-palette-presets" id="labPalettePresets" role="group" aria-label="House palette presets"></div>
+            <div class="lab-swatches" id="labSwatches" role="group" aria-label="Print palette swatches"></div>
+            <div class="lab-swatch-actions">
+              <button type="button" class="btn btn-gold" id="labAddSwatch">+ Add swatch</button>
+              <button type="button" class="btn btn-gold" id="labShuffleSwatch">Shuffle order</button>
+            </div>
+          </div>
+
+          <div class="lab-block" id="labParamsBlock">
+            <p class="lab-block-title" id="labParamsTitle">Pattern</p>
+            <div id="labParams"></div>
+          </div>
+
+          <div class="lab-block lab-tools">
+            <p class="lab-block-title">Seed &amp; history</p>
+            <div class="lab-field">
+              <label for="labSeed">Seed</label>
+              <input type="text" id="labSeed" inputmode="numeric" autocomplete="off" spellcheck="false">
+            </div>
+            <div class="lab-tool-btns">
+              <button type="button" class="btn btn-berry" id="labRandomize"><span class="lab-dice" id="labDiceIcon" aria-hidden="true">&#127922;</span> Randomize</button>
+              <button type="button" class="btn btn-gold" id="labUndo" disabled>&#8630; Undo</button>
+              <button type="button" class="btn btn-gold" id="labRedo" disabled>&#8631; Redo</button>
+              <button type="button" class="btn btn-gold" id="labReset">Reset family</button>
+            </div>
+          </div>
+
+          <div class="lab-block">
+            <p class="lab-block-title">Name &amp; save</p>
+            <div class="pd-field">
+              <label for="labName">Print name</label>
+              <input type="text" id="labName" maxlength="48" placeholder="Untitled remix" autocomplete="off">
+            </div>
+            <div class="lab-save-row">
+              <button type="button" class="btn btn-solid" id="labSave">Save to My Prints</button>
+              <button type="button" class="btn btn-gold" id="labDownload">Download SVG</button>
+              <button type="button" class="btn btn-berry" id="labSendStudio">Send to Tee Studio &rarr;</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="lab-preview-col">
+          <div class="lab-block">
+            <div class="lab-preview-head">
+              <div class="lab-zoom">
+                <label for="labZoom">Zoom</label>
+                <input type="range" id="labZoom" min="0.5" max="3" step="0.1" value="1" aria-describedby="labZoomOut">
+                <output id="labZoomOut" for="labZoom">100%</output>
+              </div>
+              <label class="lab-toggle">
+                <input type="checkbox" id="labTeeToggle">
+                <span class="lt-box" aria-hidden="true"></span>
+                <span>On a tee</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="lab-preview" id="labPreview" role="img" aria-label="Live tiled preview of the current print"></div>
+
+          <div class="lab-tee-mock" id="labTeeMock" hidden></div>
+
+          <div class="lab-meaning" id="labMeaning"></div>
+        </div>
+      </div>
+
+      <div class="lab-shelf-wrap">
+        <div class="sec-head">
+          <p class="micro">Your archive</p>
+          <h2 class="h-display h-md">MY PRINTS</h2>
+        </div>
+        <div class="lab-shelf" id="labShelf"></div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<footer data-ka-footer></footer>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
+<script src="core.js"></script>
+<script src="prints.js"></script>
+<script src="app.js"></script>
+<script src="lab.js"></script>
+</body>
+</html>

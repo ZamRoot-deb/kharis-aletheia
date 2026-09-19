@@ -1,0 +1,362 @@
+{
+  "assets/icon-192.png": {
+    "bytes": 7787,
+    "height": 192,
+    "webp": null,
+    "webpBytes": null,
+    "webpHeight": null,
+    "webpWidth": null,
+    "width": 192
+  },
+  "assets/icon-512.png": {
+    "bytes": 30742,
+    "height": 512,
+    "webp": null,
+    "webpBytes": null,
+    "webpHeight": null,
+    "webpWidth": null,
+    "width": 512
+  },
+  "assets/icon.png": {
+    "bytes": 30742,
+    "height": 512,
+    "webp": null,
+    "webpBytes": null,
+    "webpHeight": null,
+    "webpWidth": null,
+    "width": 512
+  },
+  "assets/img/about-atelier.jpg": {
+    "bytes": 306425,
+    "height": 1024,
+    "webp": "assets/img/about-atelier.webp",
+    "webpBytes": 185306,
+    "webpHeight": 1024,
+    "webpWidth": 1536,
+    "width": 1536
+  },
+  "assets/img/banner-sweatshirts.jpg": {
+    "bytes": 247460,
+    "height": 1152,
+    "webp": "assets/img/banner-sweatshirts.webp",
+    "webpBytes": 73126,
+    "webpHeight": 900,
+    "webpWidth": 1600,
+    "width": 2048
+  },
+  "assets/img/banner-tees.jpg": {
+    "bytes": 439419,
+    "height": 1152,
+    "webp": "assets/img/banner-tees.webp",
+    "webpBytes": 145998,
+    "webpHeight": 900,
+    "webpWidth": 1600,
+    "width": 2048
+  },
+  "assets/img/drop-ankara.jpg": {
+    "bytes": 437316,
+    "height": 1200,
+    "webp": "assets/img/drop-ankara.webp",
+    "webpBytes": 287294,
+    "webpHeight": 1200,
+    "webpWidth": 1200,
+    "width": 1200
+  },
+  "assets/img/hero-bg.jpg": {
+    "bytes": 649587,
+    "height": 1152,
+    "webp": "assets/img/hero-bg.webp",
+    "webpBytes": 250882,
+    "webpHeight": 900,
+    "webpWidth": 1600,
+    "width": 2048
+  },
+  "assets/img/look-1.jpg": {
+    "bytes": 151668,
+    "height": 1536,
+    "webp": "assets/img/look-1.webp",
+    "webpBytes": 64138,
+    "webpHeight": 1536,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/look-2.jpg": {
+    "bytes": 262490,
+    "height": 1536,
+    "webp": "assets/img/look-2.webp",
+    "webpBytes": 131638,
+    "webpHeight": 1536,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/look-3.jpg": {
+    "bytes": 126513,
+    "height": 1536,
+    "webp": "assets/img/look-3.webp",
+    "webpBytes": 51188,
+    "webpHeight": 1536,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/look-4.jpg": {
+    "bytes": 240698,
+    "height": 1536,
+    "webp": "assets/img/look-4.webp",
+    "webpBytes": 104438,
+    "webpHeight": 1536,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/look-5.jpg": {
+    "bytes": 192318,
+    "height": 1536,
+    "webp": "assets/img/look-5.webp",
+    "webpBytes": 54968,
+    "webpHeight": 1536,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/look-6.jpg": {
+    "bytes": 259068,
+    "height": 1536,
+    "webp": "assets/img/look-6.webp",
+    "webpBytes": 124864,
+    "webpHeight": 1536,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/look-7.jpg": {
+    "bytes": 193767,
+    "height": 1536,
+    "webp": "assets/img/look-7.webp",
+    "webpBytes": 98138,
+    "webpHeight": 1536,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/look-8.jpg": {
+    "bytes": 250877,
+    "height": 1536,
+    "webp": "assets/img/look-8.webp",
+    "webpBytes": 110648,
+    "webpHeight": 1536,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-burgundy.jpg": {
+    "bytes": 78194,
+    "height": 1024,
+    "webp": "assets/img/product-burgundy.webp",
+    "webpBytes": 29306,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-cap.jpg": {
+    "bytes": 151932,
+    "height": 1024,
+    "webp": "assets/img/product-cap.webp",
+    "webpBytes": 101376,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-cream.jpg": {
+    "bytes": 186917,
+    "height": 1024,
+    "webp": "assets/img/product-cream.webp",
+    "webpBytes": 109662,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-gold.jpg": {
+    "bytes": 97928,
+    "height": 1024,
+    "webp": "assets/img/product-gold.webp",
+    "webpBytes": 49194,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-hoodie-black.jpg": {
+    "bytes": 95525,
+    "height": 1024,
+    "webp": "assets/img/product-hoodie-black.webp",
+    "webpBytes": 39600,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-longsleeve.jpg": {
+    "bytes": 117338,
+    "height": 1024,
+    "webp": "assets/img/product-longsleeve.webp",
+    "webpBytes": 55184,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-mauve.jpg": {
+    "bytes": 176458,
+    "height": 1024,
+    "webp": "assets/img/product-mauve.webp",
+    "webpBytes": 113980,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-navy.jpg": {
+    "bytes": 81670,
+    "height": 1024,
+    "webp": "assets/img/product-navy.webp",
+    "webpBytes": 32496,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-olive.jpg": {
+    "bytes": 114891,
+    "height": 1024,
+    "webp": "assets/img/product-olive.webp",
+    "webpBytes": 59738,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-sweat-burgundy.jpg": {
+    "bytes": 101544,
+    "height": 1024,
+    "webp": "assets/img/product-sweat-burgundy.webp",
+    "webpBytes": 36088,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-sweat-cream.jpg": {
+    "bytes": 133195,
+    "height": 1024,
+    "webp": "assets/img/product-sweat-cream.webp",
+    "webpBytes": 70968,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-sweat-mauve.jpg": {
+    "bytes": 110965,
+    "height": 1024,
+    "webp": "assets/img/product-sweat-mauve.webp",
+    "webpBytes": 45674,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/product-tote.jpg": {
+    "bytes": 188797,
+    "height": 1024,
+    "webp": "assets/img/product-tote.webp",
+    "webpBytes": 132438,
+    "webpHeight": 1024,
+    "webpWidth": 1024,
+    "width": 1024
+  },
+  "assets/img/street-1.jpg": {
+    "bytes": 207283,
+    "height": 1024,
+    "webp": "assets/img/street-1.webp",
+    "webpBytes": 73512,
+    "webpHeight": 1024,
+    "webpWidth": 1536,
+    "width": 1536
+  },
+  "assets/img/street-2.jpg": {
+    "bytes": 240523,
+    "height": 1024,
+    "webp": "assets/img/street-2.webp",
+    "webpBytes": 121118,
+    "webpHeight": 1024,
+    "webpWidth": 1536,
+    "width": 1536
+  },
+  "assets/img/street-3.jpg": {
+    "bytes": 266504,
+    "height": 1024,
+    "webp": "assets/img/street-3.webp",
+    "webpBytes": 120918,
+    "webpHeight": 1024,
+    "webpWidth": 1536,
+    "width": 1536
+  },
+  "assets/logo-horizontal-navy.png": {
+    "bytes": 46986,
+    "height": 207,
+    "webp": null,
+    "webpBytes": null,
+    "webpHeight": null,
+    "webpWidth": null,
+    "width": 800
+  },
+  "assets/logo-horizontal-sm.png": {
+    "bytes": 39679,
+    "height": 207,
+    "webp": null,
+    "webpBytes": null,
+    "webpHeight": null,
+    "webpWidth": null,
+    "width": 800
+  },
+  "assets/logo-horizontal.png": {
+    "bytes": 81226,
+    "height": 415,
+    "webp": null,
+    "webpBytes": null,
+    "webpHeight": null,
+    "webpWidth": null,
+    "width": 1600
+  },
+  "assets/mockup-tee-crimson.jpg": {
+    "bytes": 145867,
+    "height": 1154,
+    "webp": "assets/mockup-tee-crimson.webp",
+    "webpBytes": 35162,
+    "webpHeight": 1117,
+    "webpWidth": 1600,
+    "width": 1654
+  },
+  "assets/og-cover.jpg": {
+    "bytes": 257349,
+    "height": 630,
+    "webp": "assets/og-cover.webp",
+    "webpBytes": 123348,
+    "webpHeight": 630,
+    "webpWidth": 1200,
+    "width": 1200
+  },
+  "assets/product-tee-black.jpg": {
+    "bytes": 24659,
+    "height": 354,
+    "webp": "assets/product-tee-black.webp",
+    "webpBytes": 8472,
+    "webpHeight": 354,
+    "webpWidth": 480,
+    "width": 480
+  },
+  "assets/product-tee-blue.jpg": {
+    "bytes": 40233,
+    "height": 354,
+    "webp": "assets/product-tee-blue.webp",
+    "webpBytes": 17524,
+    "webpHeight": 354,
+    "webpWidth": 480,
+    "width": 480
+  },
+  "assets/product-tee-white.jpg": {
+    "bytes": 31287,
+    "height": 354,
+    "webp": "assets/product-tee-white.webp",
+    "webpBytes": 11632,
+    "webpHeight": 354,
+    "webpWidth": 480,
+    "width": 480
+  }
+}
