@@ -45,5 +45,5 @@
   EXPECT: PASS
   EVIDENCE: FLOWS 95 passed, 0 failed → PASS
 
-- [ ] G10 committed and pushed to a private GitHub repo
-  EVIDENCE: pending
+- [x] G10 committed and pushed to a private GitHub repo
+  EVIDENCE: github.com/ZamRoot-deb/kharis-aletheia (private), main tracks origin/main, git status --porcelain = 0 lines at push time
