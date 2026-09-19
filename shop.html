@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHOP — KHARIS &amp; ALETHEIA</title>
+<meta name="description" content="The full Kharis & Aletheia collection — African-print tees, sweatshirts and accessories, cut to order.">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ka_theme') || 'dark');</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="shop">
+
+<div class="page">
+  <section class="page-hero">
+    <img class="ph-img" src="assets/img/banner-tees.jpg" alt="Rack of African print tees">
+    <div class="ph-veil"></div>
+    <div class="wrap">
+      <p class="micro">Shop the print</p>
+      <h1 class="h-display glitch glitch-anim" data-text="THE COLLECTION">THE COLLECTION</h1>
+      <p class="lede">Every piece is cut and sewn to order — pick your print, pick your size, and it's made for you. Nothing sits in a warehouse.</p>
+    </div>
+  </section>
+
+  <section style="padding:4rem 0 8rem">
+    <div class="wrap">
+      <div class="pill-row" id="shopPills">
+        <button class="pill on" data-cat="all">All pieces</button>
+        <button class="pill" data-cat="tees">Tees</button>
+        <button class="pill" data-cat="sweatshirts">Sweatshirts</button>
+        <button class="pill" data-cat="accessories">Accessories</button>
+      </div>
+      <div class="shop-grid" id="shopGrid"></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap foot-inner">
+    <a href="index.html">
+      <img class="logo-dark" src="assets/logo-horizontal-sm.png" alt="Kharis &amp; Aletheia">
+      <img class="logo-light" src="assets/logo-horizontal-navy.png" alt="Kharis &amp; Aletheia">
+    </a>
+    <p class="foot-line">Grace &amp; truth, woven in</p>
+    <nav class="foot-cols">
+      <a href="shop.html#tees">Tees</a>
+      <a href="shop.html#sweatshirts">Sweatshirts</a>
+      <a href="shop.html#accessories">Accessories</a>
+      <a href="index.html#lookbook">Lookbook</a>
+      <a href="sizing.html">Sizing</a>
+      <a href="about.html">About</a>
+      <a href="policies.html">Refund Policy &amp; Terms</a>
+    </nav>
+    <p class="foot-copy">© 2026 KHARIS &amp; ALETHEIA — ALL RIGHTS RESERVED</p>
+  </div>
+</footer>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
